@@ -8,4 +8,4 @@ Com base nos seus custos mensais e no nível de complexidade do vídeo, ele ser�
 
 ## Documentação
 
-[Documento de Especificação de Requisitos]([https://rroll.to/iHgSMg](https://github.com/LuanBMDev/VisualValue/blob/main/docs/Especificação%20de%20Requisitos%20VisualValue.DOC))
+[Documento de Especificação de Requisitos](https://github.com/LuanBMDev/VisualValue/blob/main/docs/Especificação%20de%20Requisitos%20VisualValue.DOC)
