@@ -24,10 +24,10 @@ Partial Class Frm_Menu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Menu))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BunifuFlatButton1 = New ns1.BunifuFlatButton()
-        Me.BunifuFlatButton2 = New ns1.BunifuFlatButton()
-        Me.BunifuFlatButton3 = New ns1.BunifuFlatButton()
-        Me.BunifuFlatButton4 = New ns1.BunifuFlatButton()
+        Me.btn_precificar = New ns1.BunifuFlatButton()
+        Me.btn_customensal = New ns1.BunifuFlatButton()
+        Me.btn_sair = New ns1.BunifuFlatButton()
+        Me.btn_custosedicao = New ns1.BunifuFlatButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -41,141 +41,141 @@ Partial Class Frm_Menu
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'BunifuFlatButton1
+        'btn_precificar
         '
-        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton1.BorderRadius = 0
-        Me.BunifuFlatButton1.ButtonText = "Precificar Video"
-        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton1.Iconimage_right = Nothing
-        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton1.IconMarginLeft = 0
-        Me.BunifuFlatButton1.IconMarginRight = 0
-        Me.BunifuFlatButton1.IconRightVisible = True
-        Me.BunifuFlatButton1.IconRightZoom = 0R
-        Me.BunifuFlatButton1.IconVisible = True
-        Me.BunifuFlatButton1.IconZoom = 50.0R
-        Me.BunifuFlatButton1.IsTab = False
-        Me.BunifuFlatButton1.Location = New System.Drawing.Point(151, 316)
-        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
-        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.selected = False
-        Me.BunifuFlatButton1.Size = New System.Drawing.Size(175, 48)
-        Me.BunifuFlatButton1.TabIndex = 1
-        Me.BunifuFlatButton1.Text = "Precificar Video"
-        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_precificar.Activecolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_precificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_precificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_precificar.BorderRadius = 0
+        Me.btn_precificar.ButtonText = "Precificar Video"
+        Me.btn_precificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_precificar.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_precificar.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_precificar.Iconimage = CType(resources.GetObject("btn_precificar.Iconimage"), System.Drawing.Image)
+        Me.btn_precificar.Iconimage_right = Nothing
+        Me.btn_precificar.Iconimage_right_Selected = Nothing
+        Me.btn_precificar.Iconimage_Selected = Nothing
+        Me.btn_precificar.IconMarginLeft = 0
+        Me.btn_precificar.IconMarginRight = 0
+        Me.btn_precificar.IconRightVisible = True
+        Me.btn_precificar.IconRightZoom = 0R
+        Me.btn_precificar.IconVisible = True
+        Me.btn_precificar.IconZoom = 50.0R
+        Me.btn_precificar.IsTab = False
+        Me.btn_precificar.Location = New System.Drawing.Point(151, 316)
+        Me.btn_precificar.Name = "btn_precificar"
+        Me.btn_precificar.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_precificar.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_precificar.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_precificar.selected = False
+        Me.btn_precificar.Size = New System.Drawing.Size(175, 48)
+        Me.btn_precificar.TabIndex = 1
+        Me.btn_precificar.Text = "Precificar Video"
+        Me.btn_precificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_precificar.Textcolor = System.Drawing.Color.White
+        Me.btn_precificar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'BunifuFlatButton2
+        'btn_customensal
         '
-        Me.BunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton2.BorderRadius = 0
-        Me.BunifuFlatButton2.ButtonText = "Custos Mensais"
-        Me.BunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.Iconimage = CType(resources.GetObject("BunifuFlatButton2.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton2.Iconimage_right = Nothing
-        Me.BunifuFlatButton2.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton2.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton2.IconMarginLeft = 0
-        Me.BunifuFlatButton2.IconMarginRight = 0
-        Me.BunifuFlatButton2.IconRightVisible = True
-        Me.BunifuFlatButton2.IconRightZoom = 0R
-        Me.BunifuFlatButton2.IconVisible = True
-        Me.BunifuFlatButton2.IconZoom = 50.0R
-        Me.BunifuFlatButton2.IsTab = False
-        Me.BunifuFlatButton2.Location = New System.Drawing.Point(151, 382)
-        Me.BunifuFlatButton2.Name = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.BunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.selected = False
-        Me.BunifuFlatButton2.Size = New System.Drawing.Size(175, 48)
-        Me.BunifuFlatButton2.TabIndex = 2
-        Me.BunifuFlatButton2.Text = "Custos Mensais"
-        Me.BunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BunifuFlatButton2.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_customensal.Activecolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_customensal.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_customensal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_customensal.BorderRadius = 0
+        Me.btn_customensal.ButtonText = "Custos Mensais"
+        Me.btn_customensal.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_customensal.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_customensal.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_customensal.Iconimage = CType(resources.GetObject("btn_customensal.Iconimage"), System.Drawing.Image)
+        Me.btn_customensal.Iconimage_right = Nothing
+        Me.btn_customensal.Iconimage_right_Selected = Nothing
+        Me.btn_customensal.Iconimage_Selected = Nothing
+        Me.btn_customensal.IconMarginLeft = 0
+        Me.btn_customensal.IconMarginRight = 0
+        Me.btn_customensal.IconRightVisible = True
+        Me.btn_customensal.IconRightZoom = 0R
+        Me.btn_customensal.IconVisible = True
+        Me.btn_customensal.IconZoom = 50.0R
+        Me.btn_customensal.IsTab = False
+        Me.btn_customensal.Location = New System.Drawing.Point(151, 382)
+        Me.btn_customensal.Name = "btn_customensal"
+        Me.btn_customensal.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_customensal.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_customensal.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_customensal.selected = False
+        Me.btn_customensal.Size = New System.Drawing.Size(175, 48)
+        Me.btn_customensal.TabIndex = 2
+        Me.btn_customensal.Text = "Custos Mensais"
+        Me.btn_customensal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_customensal.Textcolor = System.Drawing.Color.White
+        Me.btn_customensal.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'BunifuFlatButton3
+        'btn_sair
         '
-        Me.BunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton3.BorderRadius = 0
-        Me.BunifuFlatButton3.ButtonText = "Sair"
-        Me.BunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton3.Iconimage = CType(resources.GetObject("BunifuFlatButton3.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton3.Iconimage_right = Nothing
-        Me.BunifuFlatButton3.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton3.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton3.IconMarginLeft = 0
-        Me.BunifuFlatButton3.IconMarginRight = 0
-        Me.BunifuFlatButton3.IconRightVisible = True
-        Me.BunifuFlatButton3.IconRightZoom = 0R
-        Me.BunifuFlatButton3.IconVisible = True
-        Me.BunifuFlatButton3.IconZoom = 50.0R
-        Me.BunifuFlatButton3.IsTab = False
-        Me.BunifuFlatButton3.Location = New System.Drawing.Point(151, 513)
-        Me.BunifuFlatButton3.Name = "BunifuFlatButton3"
-        Me.BunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton3.selected = False
-        Me.BunifuFlatButton3.Size = New System.Drawing.Size(175, 48)
-        Me.BunifuFlatButton3.TabIndex = 3
-        Me.BunifuFlatButton3.Text = "Sair"
-        Me.BunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton3.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton3.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_sair.Activecolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_sair.BorderRadius = 0
+        Me.btn_sair.ButtonText = "Sair"
+        Me.btn_sair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sair.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_sair.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_sair.Iconimage = CType(resources.GetObject("btn_sair.Iconimage"), System.Drawing.Image)
+        Me.btn_sair.Iconimage_right = Nothing
+        Me.btn_sair.Iconimage_right_Selected = Nothing
+        Me.btn_sair.Iconimage_Selected = Nothing
+        Me.btn_sair.IconMarginLeft = 0
+        Me.btn_sair.IconMarginRight = 0
+        Me.btn_sair.IconRightVisible = True
+        Me.btn_sair.IconRightZoom = 0R
+        Me.btn_sair.IconVisible = True
+        Me.btn_sair.IconZoom = 50.0R
+        Me.btn_sair.IsTab = False
+        Me.btn_sair.Location = New System.Drawing.Point(151, 513)
+        Me.btn_sair.Name = "btn_sair"
+        Me.btn_sair.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_sair.selected = False
+        Me.btn_sair.Size = New System.Drawing.Size(175, 48)
+        Me.btn_sair.TabIndex = 3
+        Me.btn_sair.Text = "Sair"
+        Me.btn_sair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_sair.Textcolor = System.Drawing.Color.White
+        Me.btn_sair.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'BunifuFlatButton4
+        'btn_custosedicao
         '
-        Me.BunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton4.BorderRadius = 0
-        Me.BunifuFlatButton4.ButtonText = "Custos de Edição"
-        Me.BunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton4.Iconimage = CType(resources.GetObject("BunifuFlatButton4.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton4.Iconimage_right = Nothing
-        Me.BunifuFlatButton4.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton4.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton4.IconMarginLeft = 0
-        Me.BunifuFlatButton4.IconMarginRight = 0
-        Me.BunifuFlatButton4.IconRightVisible = True
-        Me.BunifuFlatButton4.IconRightZoom = 0R
-        Me.BunifuFlatButton4.IconVisible = True
-        Me.BunifuFlatButton4.IconZoom = 50.0R
-        Me.BunifuFlatButton4.IsTab = False
-        Me.BunifuFlatButton4.Location = New System.Drawing.Point(151, 448)
-        Me.BunifuFlatButton4.Name = "BunifuFlatButton4"
-        Me.BunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.BunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.BunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton4.selected = False
-        Me.BunifuFlatButton4.Size = New System.Drawing.Size(175, 48)
-        Me.BunifuFlatButton4.TabIndex = 4
-        Me.BunifuFlatButton4.Text = "Custos de Edição"
-        Me.BunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton4.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton4.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_custosedicao.Activecolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_custosedicao.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_custosedicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_custosedicao.BorderRadius = 0
+        Me.btn_custosedicao.ButtonText = "Custos de Edição"
+        Me.btn_custosedicao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_custosedicao.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_custosedicao.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_custosedicao.Iconimage = CType(resources.GetObject("btn_custosedicao.Iconimage"), System.Drawing.Image)
+        Me.btn_custosedicao.Iconimage_right = Nothing
+        Me.btn_custosedicao.Iconimage_right_Selected = Nothing
+        Me.btn_custosedicao.Iconimage_Selected = Nothing
+        Me.btn_custosedicao.IconMarginLeft = 0
+        Me.btn_custosedicao.IconMarginRight = 0
+        Me.btn_custosedicao.IconRightVisible = True
+        Me.btn_custosedicao.IconRightZoom = 0R
+        Me.btn_custosedicao.IconVisible = True
+        Me.btn_custosedicao.IconZoom = 50.0R
+        Me.btn_custosedicao.IsTab = False
+        Me.btn_custosedicao.Location = New System.Drawing.Point(151, 448)
+        Me.btn_custosedicao.Name = "btn_custosedicao"
+        Me.btn_custosedicao.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_custosedicao.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_custosedicao.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_custosedicao.selected = False
+        Me.btn_custosedicao.Size = New System.Drawing.Size(175, 48)
+        Me.btn_custosedicao.TabIndex = 4
+        Me.btn_custosedicao.Text = "Custos de Edição"
+        Me.btn_custosedicao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_custosedicao.Textcolor = System.Drawing.Color.White
+        Me.btn_custosedicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Frm_Menu
         '
@@ -183,10 +183,10 @@ Partial Class Frm_Menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(479, 602)
-        Me.Controls.Add(Me.BunifuFlatButton4)
-        Me.Controls.Add(Me.BunifuFlatButton3)
-        Me.Controls.Add(Me.BunifuFlatButton2)
-        Me.Controls.Add(Me.BunifuFlatButton1)
+        Me.Controls.Add(Me.btn_custosedicao)
+        Me.Controls.Add(Me.btn_sair)
+        Me.Controls.Add(Me.btn_customensal)
+        Me.Controls.Add(Me.btn_precificar)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Frm_Menu"
@@ -198,8 +198,8 @@ Partial Class Frm_Menu
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents BunifuFlatButton1 As ns1.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton2 As ns1.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton3 As ns1.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton4 As ns1.BunifuFlatButton
+    Friend WithEvents btn_precificar As ns1.BunifuFlatButton
+    Friend WithEvents btn_customensal As ns1.BunifuFlatButton
+    Friend WithEvents btn_sair As ns1.BunifuFlatButton
+    Friend WithEvents btn_custosedicao As ns1.BunifuFlatButton
 End Class
