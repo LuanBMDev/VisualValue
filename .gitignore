@@ -1,3 +1,6 @@
 prj_VisualValue/.vs/
 prj_VisualValue/obj/
 docs/~$pecificação de Requisitos VisualValue.DOC
+*.exe
+*.pdb
+*.dll
