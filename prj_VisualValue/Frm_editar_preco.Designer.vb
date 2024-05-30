@@ -379,22 +379,23 @@ Partial Class Frm_editar_preco
         '
         'ID
         '
-        Me.ID.HeaderText = "Column1"
+        Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         '
         'Nome
         '
-        Me.Nome.HeaderText = "Column1"
+        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nome.HeaderText = "Perfil"
         Me.Nome.Name = "Nome"
         '
         'Editar
         '
-        Me.Editar.HeaderText = "Column1"
+        Me.Editar.HeaderText = "Editar"
         Me.Editar.Name = "Editar"
         '
         'Deletar
         '
-        Me.Deletar.HeaderText = "Column1"
+        Me.Deletar.HeaderText = "Deletar"
         Me.Deletar.Name = "Deletar"
         '
         'Frm_editar_preco
