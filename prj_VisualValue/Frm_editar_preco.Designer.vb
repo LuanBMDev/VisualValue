@@ -50,12 +50,12 @@ Partial Class Frm_editar_preco
         Me.BunifuSeparator2 = New ns1.BunifuSeparator()
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_precos = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Deletar = New System.Windows.Forms.DataGridViewButtonColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -328,7 +328,7 @@ Partial Class Frm_editar_preco
         Me.btn_cadastar.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.btn_cadastar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_cadastar.BorderRadius = 0
-        Me.btn_cadastar.ButtonText = "CADASTRAR/EDITAR"
+        Me.btn_cadastar.ButtonText = "CADASTRAR"
         Me.btn_cadastar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_cadastar.DisabledColor = System.Drawing.Color.Gray
         Me.btn_cadastar.Iconcolor = System.Drawing.Color.Transparent
@@ -351,7 +351,7 @@ Partial Class Frm_editar_preco
         Me.btn_cadastar.selected = False
         Me.btn_cadastar.Size = New System.Drawing.Size(454, 48)
         Me.btn_cadastar.TabIndex = 39
-        Me.btn_cadastar.Text = "CADASTRAR/EDITAR"
+        Me.btn_cadastar.Text = "CADASTRAR"
         Me.btn_cadastar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btn_cadastar.Textcolor = System.Drawing.Color.White
         Me.btn_cadastar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -368,14 +368,14 @@ Partial Class Frm_editar_preco
         Me.BunifuSeparator3.Transparency = 255
         Me.BunifuSeparator3.Vertical = False
         '
-        'DataGridView1
+        'dgv_precos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nome, Me.Editar, Me.Deletar})
-        Me.DataGridView1.Location = New System.Drawing.Point(33, 457)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(936, 189)
-        Me.DataGridView1.TabIndex = 41
+        Me.dgv_precos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_precos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nome, Me.Editar, Me.Deletar})
+        Me.dgv_precos.Location = New System.Drawing.Point(33, 457)
+        Me.dgv_precos.Name = "dgv_precos"
+        Me.dgv_precos.Size = New System.Drawing.Size(936, 189)
+        Me.dgv_precos.TabIndex = 41
         '
         'ID
         '
@@ -403,7 +403,7 @@ Partial Class Frm_editar_preco
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgv_precos)
         Me.Controls.Add(Me.BunifuSeparator3)
         Me.Controls.Add(Me.btn_cadastar)
         Me.Controls.Add(Me.BunifuSeparator2)
@@ -436,7 +436,7 @@ Partial Class Frm_editar_preco
         Me.Name = "Frm_editar_preco"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar tabela de preços"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -470,7 +470,7 @@ Partial Class Frm_editar_preco
     Friend WithEvents BunifuSeparator2 As ns1.BunifuSeparator
     Friend WithEvents btn_cadastar As ns1.BunifuFlatButton
     Friend WithEvents BunifuSeparator3 As ns1.BunifuSeparator
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_precos As DataGridView
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nome As DataGridViewTextBoxColumn
     Friend WithEvents Editar As DataGridViewButtonColumn

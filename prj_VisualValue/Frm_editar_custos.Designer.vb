@@ -243,7 +243,7 @@ Partial Class Frm_editar_custos
         Me.btn_cadastar.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.btn_cadastar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_cadastar.BorderRadius = 0
-        Me.btn_cadastar.ButtonText = "CADASTRAR/EDITAR"
+        Me.btn_cadastar.ButtonText = "CADASTRAR"
         Me.btn_cadastar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_cadastar.DisabledColor = System.Drawing.Color.Gray
         Me.btn_cadastar.Iconcolor = System.Drawing.Color.Transparent
@@ -266,7 +266,7 @@ Partial Class Frm_editar_custos
         Me.btn_cadastar.selected = False
         Me.btn_cadastar.Size = New System.Drawing.Size(454, 48)
         Me.btn_cadastar.TabIndex = 23
-        Me.btn_cadastar.Text = "CADASTRAR/EDITAR"
+        Me.btn_cadastar.Text = "CADASTRAR"
         Me.btn_cadastar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btn_cadastar.Textcolor = System.Drawing.Color.White
         Me.btn_cadastar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
