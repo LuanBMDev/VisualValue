@@ -18,4 +18,9 @@
     Private Sub btn_sair_Click(sender As Object, e As EventArgs) Handles btn_sair.Click
 
     End Sub
+
+    Private Sub Frm_Menu_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Conectar_banco()
+
+    End Sub
 End Class
