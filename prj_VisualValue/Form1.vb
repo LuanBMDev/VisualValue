@@ -16,7 +16,10 @@
     End Sub
 
     Private Sub btn_sair_Click(sender As Object, e As EventArgs) Handles btn_sair.Click
-
+        resp = MsgBox("Deseja sair do Visual Value?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Sair?")
+        If resp = MsgBoxResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
 
     Private Sub Frm_Menu_Load(sender As Object, e As EventArgs) Handles Me.Load
