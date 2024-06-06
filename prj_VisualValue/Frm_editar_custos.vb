@@ -1,5 +1,5 @@
 ﻿Public Class Frm_editar_custos
-    Dim contador = 1
+    Dim contador As Integer
     Dim aux_nome_custo
     Dim aux_id_perfil
 
@@ -46,7 +46,7 @@
             MsgBox("Preencha os campos de nome do perfil de custos, dias trabalhados por mês e horas trabalhadas por dia",
                     MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
         Else
-            sql = "SELECT * FROM tb_perfil_custos"
+            sql = "SELECT * FROM tb_perfil_custos WHERE nome_perfil_custos = '" & txt_perfilcustos.Text & "'"
             tabela = banco.Execute(sql)
 
             If tabela.EOF = False Then
@@ -62,20 +62,32 @@
                 tabela = banco.Execute(sql)
 
                 contador = 1
-                aux_id_perfil = tabela.Fields(0)
+
+                sql = "SELECT * FROM tb_perfil_custos WHERE nome_perfil_custos = '" & txt_perfilcustos.Text & "'"
+                tabela = banco.Execute(sql)
+
+                aux_id_perfil = CInt(tabela.Fields(0).Value)
 
                 With dgv_listacusto
-                    While contador <= .Size
-                        sql = "INSERT INTO tb_custos_mensais VALUES (" &
+                    While contador <= .RowCount
+                        sql = "INSERT INTO tb_custos_mensais (id_custo_mensal, nome_custo_mensal, valor_custo_mensal, id_perfil_custos) VALUES (" &
                                            .Rows(contador).Cells(0).Value & ", " &
-                                     "'" & .Rows(contador).Cells(1).Value & ", " &
-                                     "'" & .Rows(contador).Cells(2).Value & ", " &
+                                     "'" & .Rows(contador).Cells(1).Value & "', " &
+                                     "'" & .Rows(contador).Cells(2).Value & "', " &
                                            aux_id_perfil & ")"
                         tabela = banco.Execute(sql)
-
                     End While
                 End With
+
+                MsgBox("Custos mensais cadastrados com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
+
+                carregar_custos_mensais()
+
             End If
         End If
+    End Sub
+
+    Private Sub Frm_editar_custos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        carregar_custos_mensais()
     End Sub
 End Class

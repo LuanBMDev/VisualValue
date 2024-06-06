@@ -15,6 +15,26 @@
         End Try
     End Sub
 
+    Sub carregar_custos_mensais()
+        Try
+            sql = "SELECT * FROM tb_perfil_custos"
+            tabela = banco.Execute(sql)
+            With Frm_editar_custos.dgv_listaperfil
+                .Rows.Clear()
+                Do While tabela.EOF = False
+                    .Rows.Add(tabela.Fields(0).Value,
+                        tabela.Fields(1).Value,
+                        Nothing,
+                        Nothing)
+                    tabela.MoveNext()
+                Loop
+
+            End With
+        Catch ex As Exception
+            MsgBox("Não foi possível carregar os custos mensais", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
+        End Try
+    End Sub
+
     Sub permitir_apenas_numeros_e_virgula(tecla As KeyPressEventArgs)
         If Not IsNumeric(tecla.KeyChar) And Asc(tecla.KeyChar) <> 8 And Asc(tecla.KeyChar) <> 44 Then
             tecla.Handled = True
