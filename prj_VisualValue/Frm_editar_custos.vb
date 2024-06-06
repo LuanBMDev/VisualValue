@@ -61,7 +61,7 @@
                                                   cmb_horatrabalhada.Text & ")"
                 tabela = banco.Execute(sql)
 
-                contador = 1
+                contador = 0
 
                 sql = "SELECT * FROM tb_perfil_custos WHERE nome_perfil_custos = '" & txt_perfilcustos.Text & "'"
                 tabela = banco.Execute(sql)
@@ -69,20 +69,22 @@
                 aux_id_perfil = CInt(tabela.Fields(0).Value)
 
                 With dgv_listacusto
-                    While contador <= .RowCount
+                    While contador < .RowCount
                         sql = "INSERT INTO tb_custos_mensais (id_custo_mensal, nome_custo_mensal, valor_custo_mensal, id_perfil_custos) VALUES (" &
                                            .Rows(contador).Cells(0).Value & ", " &
                                      "'" & .Rows(contador).Cells(1).Value & "', " &
                                      "'" & .Rows(contador).Cells(2).Value & "', " &
                                            aux_id_perfil & ")"
                         tabela = banco.Execute(sql)
+
+                        contador += 1
                     End While
                 End With
 
                 MsgBox("Custos mensais cadastrados com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
 
                 carregar_custos_mensais()
-
+                limpar_custos_mensais()
             End If
         End If
     End Sub

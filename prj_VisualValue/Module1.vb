@@ -35,6 +35,17 @@
         End Try
     End Sub
 
+    Sub limpar_custos_mensais()
+        With Frm_editar_custos
+            .txt_perfilcustos.Clear()
+            .txt_nomecusto.Clear()
+            .txt_precocusto.Clear()
+            .cmb_diatrabalhado.Text = ""
+            .cmb_horatrabalhada.Text = ""
+            .dgv_listacusto.Rows.Clear()
+        End With
+    End Sub
+
     Sub permitir_apenas_numeros_e_virgula(tecla As KeyPressEventArgs)
         If Not IsNumeric(tecla.KeyChar) And Asc(tecla.KeyChar) <> 8 And Asc(tecla.KeyChar) <> 44 Then
             tecla.Handled = True
