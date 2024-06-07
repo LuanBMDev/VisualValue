@@ -19,6 +19,7 @@
                 MsgBox("Perfil editado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                 carrgar_dados()
                 idperfil = 0
+                btn_cadastar.Text = "CADASTRAR"
             Catch ex As Exception
                 MsgBox("Erro ao editar", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
             End Try
@@ -77,7 +78,7 @@
 
     Private Sub Frm_editar_preco_Load(sender As Object, e As EventArgs) Handles Me.Load
         carrgar_dados()
-
+        Frm_Menu.Hide()
     End Sub
 
     Private Sub dgv_precos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_precos.CellContentClick
@@ -113,9 +114,123 @@
                         txt_precocomplexa.Text = tabela.Fields(6).Value
                     End If
                 End If
+                btn_cadastar.Text = "EDITAR"
             Catch ex As Exception
                 MsgBox("Não foi possível entrar no modo edição!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
             End Try
         End With
+    End Sub
+
+    Private Sub Frm_editar_preco_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Frm_Menu.Show()
+
+    End Sub
+
+    Private Sub txt_perfilpreco_TextChanged(sender As Object, e As EventArgs) Handles txt_perfilpreco.TextChanged
+        If txt_perfilpreco.Text = "" Then
+            Label19.Show()
+        Else
+            Label19.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precolegenda_TextChanged(sender As Object, e As EventArgs) Handles txt_precolegenda.TextChanged
+        If txt_precolegenda.Text = "" Then
+            Label20.Show()
+        Else
+            Label20.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precodiferenca_TextChanged(sender As Object, e As EventArgs) Handles txt_precodiferenca.TextChanged
+        If txt_precodiferenca.Text = "" Then
+            Label21.Show()
+        Else
+            Label21.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precosimples_TextChanged(sender As Object, e As EventArgs) Handles txt_precosimples.TextChanged
+        If txt_precosimples.Text = "" Then
+            Label22.Show()
+        Else
+            Label22.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precomedia_TextChanged(sender As Object, e As EventArgs) Handles txt_precomedia.TextChanged
+        If txt_precomedia.Text = "" Then
+            Label23.Show()
+        Else
+            Label23.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precocomplexa_TextChanged(sender As Object, e As EventArgs) Handles txt_precocomplexa.TextChanged
+        If txt_precocomplexa.Text = "" Then
+            Label24.Show()
+        Else
+            Label24.Hide()
+        End If
+    End Sub
+
+    Private Sub txt_precolegenda_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precolegenda.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+
+        If KeyAscii = 0 Then
+
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub txt_precodiferenca_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precodiferenca.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+
+        If KeyAscii = 0 Then
+
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub txt_precosimples_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precosimples.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+
+        If KeyAscii = 0 Then
+
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub txt_precomedia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precomedia.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+
+        If KeyAscii = 0 Then
+
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub txt_precocomplexa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precocomplexa.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+
+        If KeyAscii = 0 Then
+
+            e.Handled = True
+
+        End If
     End Sub
 End Class

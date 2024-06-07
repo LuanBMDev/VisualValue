@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_editar_preco
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class Frm_editar_preco
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_preco))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BunifuSeparator1 = New ns1.BunifuSeparator()
         Me.txt_perfilpreco = New System.Windows.Forms.TextBox()
@@ -42,7 +43,6 @@ Partial Class Frm_editar_preco
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.txt_precolegenda = New System.Windows.Forms.TextBox()
         Me.txt_precodiferenca = New System.Windows.Forms.TextBox()
         Me.txt_precosimples = New System.Windows.Forms.TextBox()
         Me.txt_precomedia = New System.Windows.Forms.TextBox()
@@ -51,11 +51,20 @@ Partial Class Frm_editar_preco
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.dgv_precos = New System.Windows.Forms.DataGridView()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txt_precolegenda = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Deletar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Editar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Deletar = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -83,9 +92,10 @@ Partial Class Frm_editar_preco
         '
         'txt_perfilpreco
         '
+        Me.txt_perfilpreco.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
         Me.txt_perfilpreco.Location = New System.Drawing.Point(33, 67)
         Me.txt_perfilpreco.Name = "txt_perfilpreco"
-        Me.txt_perfilpreco.Size = New System.Drawing.Size(402, 20)
+        Me.txt_perfilpreco.Size = New System.Drawing.Size(402, 26)
         Me.txt_perfilpreco.TabIndex = 15
         '
         'Label1
@@ -275,39 +285,36 @@ Partial Class Frm_editar_preco
         Me.Label18.TabIndex = 32
         Me.Label18.Text = "R$"
         '
-        'txt_precolegenda
-        '
-        Me.txt_precolegenda.Location = New System.Drawing.Point(156, 193)
-        Me.txt_precolegenda.Name = "txt_precolegenda"
-        Me.txt_precolegenda.Size = New System.Drawing.Size(100, 20)
-        Me.txt_precolegenda.TabIndex = 33
-        '
         'txt_precodiferenca
         '
+        Me.txt_precodiferenca.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
         Me.txt_precodiferenca.Location = New System.Drawing.Point(176, 272)
         Me.txt_precodiferenca.Name = "txt_precodiferenca"
-        Me.txt_precodiferenca.Size = New System.Drawing.Size(100, 20)
+        Me.txt_precodiferenca.Size = New System.Drawing.Size(100, 23)
         Me.txt_precodiferenca.TabIndex = 34
         '
         'txt_precosimples
         '
+        Me.txt_precosimples.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
         Me.txt_precosimples.Location = New System.Drawing.Point(574, 204)
         Me.txt_precosimples.Name = "txt_precosimples"
-        Me.txt_precosimples.Size = New System.Drawing.Size(100, 20)
+        Me.txt_precosimples.Size = New System.Drawing.Size(100, 23)
         Me.txt_precosimples.TabIndex = 35
         '
         'txt_precomedia
         '
+        Me.txt_precomedia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
         Me.txt_precomedia.Location = New System.Drawing.Point(574, 273)
         Me.txt_precomedia.Name = "txt_precomedia"
-        Me.txt_precomedia.Size = New System.Drawing.Size(100, 20)
+        Me.txt_precomedia.Size = New System.Drawing.Size(100, 23)
         Me.txt_precomedia.TabIndex = 36
         '
         'txt_precocomplexa
         '
+        Me.txt_precocomplexa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
         Me.txt_precocomplexa.Location = New System.Drawing.Point(852, 204)
         Me.txt_precocomplexa.Name = "txt_precocomplexa"
-        Me.txt_precocomplexa.Size = New System.Drawing.Size(100, 20)
+        Me.txt_precocomplexa.Size = New System.Drawing.Size(100, 23)
         Me.txt_precocomplexa.TabIndex = 37
         '
         'BunifuSeparator2
@@ -377,6 +384,96 @@ Partial Class Frm_editar_preco
         Me.dgv_precos.Size = New System.Drawing.Size(936, 189)
         Me.dgv_precos.TabIndex = 41
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.White
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Location = New System.Drawing.Point(417, 67)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(15, 20)
+        Me.Label19.TabIndex = 42
+        Me.Label19.Text = "*"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.White
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label20.ForeColor = System.Drawing.Color.Red
+        Me.Label20.Location = New System.Drawing.Point(241, 193)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(15, 20)
+        Me.Label20.TabIndex = 43
+        Me.Label20.Text = "*"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.White
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label21.ForeColor = System.Drawing.Color.Red
+        Me.Label21.Location = New System.Drawing.Point(261, 272)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(15, 20)
+        Me.Label21.TabIndex = 44
+        Me.Label21.Text = "*"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.White
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label22.ForeColor = System.Drawing.Color.Red
+        Me.Label22.Location = New System.Drawing.Point(659, 204)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(15, 20)
+        Me.Label22.TabIndex = 45
+        Me.Label22.Text = "*"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.White
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label23.ForeColor = System.Drawing.Color.Red
+        Me.Label23.Location = New System.Drawing.Point(659, 273)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(15, 20)
+        Me.Label23.TabIndex = 46
+        Me.Label23.Text = "*"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.Color.White
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.Label24.ForeColor = System.Drawing.Color.Red
+        Me.Label24.Location = New System.Drawing.Point(937, 203)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(15, 20)
+        Me.Label24.TabIndex = 47
+        Me.Label24.Text = "*"
+        '
+        'txt_precolegenda
+        '
+        Me.txt_precolegenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.txt_precolegenda.Location = New System.Drawing.Point(156, 193)
+        Me.txt_precolegenda.Name = "txt_precolegenda"
+        Me.txt_precolegenda.Size = New System.Drawing.Size(100, 23)
+        Me.txt_precolegenda.TabIndex = 33
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(708, 14)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(260, 80)
+        Me.PictureBox1.TabIndex = 48
+        Me.PictureBox1.TabStop = False
+        '
         'ID
         '
         Me.ID.HeaderText = "ID"
@@ -391,12 +488,16 @@ Partial Class Frm_editar_preco
         'Editar
         '
         Me.Editar.HeaderText = "Editar"
+        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
         Me.Editar.Name = "Editar"
+        Me.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'Deletar
         '
         Me.Deletar.HeaderText = "Deletar"
+        Me.Deletar.Image = CType(resources.GetObject("Deletar.Image"), System.Drawing.Image)
         Me.Deletar.Name = "Deletar"
+        Me.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'Frm_editar_preco
         '
@@ -404,6 +505,13 @@ Partial Class Frm_editar_preco
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.dgv_precos)
         Me.Controls.Add(Me.BunifuSeparator3)
         Me.Controls.Add(Me.btn_cadastar)
@@ -438,6 +546,7 @@ Partial Class Frm_editar_preco
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar tabela de preços"
         CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -463,7 +572,6 @@ Partial Class Frm_editar_preco
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents txt_precolegenda As TextBox
     Friend WithEvents txt_precodiferenca As TextBox
     Friend WithEvents txt_precosimples As TextBox
     Friend WithEvents txt_precomedia As TextBox
@@ -472,8 +580,16 @@ Partial Class Frm_editar_preco
     Friend WithEvents btn_cadastar As ns1.BunifuFlatButton
     Friend WithEvents BunifuSeparator3 As ns1.BunifuSeparator
     Friend WithEvents dgv_precos As DataGridView
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents txt_precolegenda As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nome As DataGridViewTextBoxColumn
-    Friend WithEvents Editar As DataGridViewButtonColumn
-    Friend WithEvents Deletar As DataGridViewButtonColumn
+    Friend WithEvents Editar As DataGridViewImageColumn
+    Friend WithEvents Deletar As DataGridViewImageColumn
 End Class
