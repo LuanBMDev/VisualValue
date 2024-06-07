@@ -48,6 +48,7 @@ Partial Class Frm_editar_custos
         Me.editar_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
+        Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -336,12 +337,48 @@ Partial Class Frm_editar_custos
         Me.txt_precocusto.Size = New System.Drawing.Size(199, 20)
         Me.txt_precocusto.TabIndex = 16
         '
+        'btn_sair_modo_edicao
+        '
+        Me.btn_sair_modo_edicao.Activecolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_modo_edicao.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_modo_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_sair_modo_edicao.BorderRadius = 0
+        Me.btn_sair_modo_edicao.ButtonText = "Sair do modo de edição"
+        Me.btn_sair_modo_edicao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sair_modo_edicao.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_sair_modo_edicao.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_sair_modo_edicao.Iconimage = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_right = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_right_Selected = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_Selected = Nothing
+        Me.btn_sair_modo_edicao.IconMarginLeft = 0
+        Me.btn_sair_modo_edicao.IconMarginRight = 0
+        Me.btn_sair_modo_edicao.IconRightVisible = True
+        Me.btn_sair_modo_edicao.IconRightZoom = 0R
+        Me.btn_sair_modo_edicao.IconVisible = True
+        Me.btn_sair_modo_edicao.IconZoom = 50.0R
+        Me.btn_sair_modo_edicao.IsTab = False
+        Me.btn_sair_modo_edicao.Location = New System.Drawing.Point(754, 452)
+        Me.btn_sair_modo_edicao.Name = "btn_sair_modo_edicao"
+        Me.btn_sair_modo_edicao.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_modo_edicao.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_modo_edicao.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_sair_modo_edicao.selected = False
+        Me.btn_sair_modo_edicao.Size = New System.Drawing.Size(168, 30)
+        Me.btn_sair_modo_edicao.TabIndex = 26
+        Me.btn_sair_modo_edicao.Text = "Sair do modo de edição"
+        Me.btn_sair_modo_edicao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_sair_modo_edicao.Textcolor = System.Drawing.Color.White
+        Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_sair_modo_edicao.Visible = False
+        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
+        Me.Controls.Add(Me.btn_sair_modo_edicao)
         Me.Controls.Add(Me.txt_precocusto)
         Me.Controls.Add(Me.dgv_listaperfil)
         Me.Controls.Add(Me.BunifuSeparator4)
@@ -397,4 +434,5 @@ Partial Class Frm_editar_custos
     Friend WithEvents excluir_perfil_custo As DataGridViewImageColumn
     Friend WithEvents dgv_listacusto As DataGridView
     Friend WithEvents txt_precocusto As MaskedTextBox
+    Friend WithEvents btn_sair_modo_edicao As ns1.BunifuFlatButton
 End Class

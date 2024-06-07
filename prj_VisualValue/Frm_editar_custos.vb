@@ -26,6 +26,12 @@
                 resp = MsgBox("Deseja remover o custo " & aux_nome_custo & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                 If resp = MsgBoxResult.Yes Then
                     contador = .CurrentRow.Index
+
+                    If modo_edicao = True Then
+                        sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador
+                        ' TODO: consertar o UPDATE pra se adaptar à quantidade de custos mensais no dgv
+                    End If
+
                     While contador < .Rows.Count
                         .Rows(contador).Cells(0).Value = contador
                         contador += 1
@@ -45,7 +51,7 @@
         If txt_perfilcustos.Text = "" Or cmb_diatrabalhado.Text = "" Or cmb_horatrabalhada.Text = "" Then
             MsgBox("Preencha os campos de nome do perfil de custos, dias trabalhados por mês e horas trabalhadas por dia",
                     MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
-        Else
+        ElseIf modo_edicao = False Then
             sql = "SELECT * FROM tb_perfil_custos WHERE nome_perfil_custos = '" & txt_perfilcustos.Text & "'"
             tabela = banco.Execute(sql)
 
@@ -59,7 +65,7 @@
                                     "VALUES ('" & txt_perfilcustos.Text & "', " &
                                                   cmb_diatrabalhado.Text & ", " &
                                                   cmb_horatrabalhada.Text & ")"
-                tabela = banco.Execute(sql)
+                tabela = banco.Execute(UCase(sql))
 
                 contador = 0
 
@@ -75,7 +81,7 @@
                                      "'" & .Rows(contador).Cells(1).Value & "', " &
                                      "'" & .Rows(contador).Cells(2).Value & "', " &
                                            aux_id_perfil & ")"
-                        tabela = banco.Execute(sql)
+                        tabela = banco.Execute(UCase(sql))
 
                         contador += 1
                     End While
@@ -86,10 +92,63 @@
                 carregar_custos_mensais()
                 limpar_custos_mensais()
             End If
+
+        Else
+            sql = "UPDATE tb_perfil_custos SET nome_perfil_custos = '" & txt_perfilcustos.Text & "', " &
+                                              "dias_trabalhados = " & cmb_diatrabalhado.Text & ", " &
+                                              "horas_trabalhadas = " & cmb_horatrabalhada.Text &
+                                              " WHERE id_perfil_custos = " & aux_id_perfil
+            tabela = banco.Execute(UCase(sql))
+
+            contador = 0
+
+            With dgv_listacusto
+                Do While contador < .RowCount
+                    sql = "UPDATE tb_custos_mensais SET id_custo_mensal = " & .Rows(contador).Cells(0).Value & ", " &
+                                                       "nome_custo_mensal = '" & .Rows(contador).Cells(1).Value & "', " &
+                                                       "valor_custo_mensal = " & .Rows(contador).Cells(2).Value &
+                                                       " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador + 1
+                    tabela = banco.Execute(UCase(sql))
+                    contador += 1
+                Loop
+            End With
+
+            MsgBox("Perfil de custos mensais editado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
+            alt_modo_edicao_custos_mensais(aux_id_perfil)
         End If
+    End Sub
+
+    Private Sub dgv_listaperfil_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listaperfil.CellContentClick
+        With dgv_listaperfil
+            If .CurrentRow.Cells(3).Selected Then
+                resp = MsgBox("Deseja apagar o perfil '" & .CurrentRow.Cells(1).Value & "'?",
+                            MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
+                If resp = MsgBoxResult.Yes Then
+                    aux_id_perfil = .CurrentRow.Cells(0).Value
+
+                    sql = "DELETE FROM tb_perfil_custos WHERE id_perfil_custos = " & aux_id_perfil
+                    tabela = banco.Execute(sql)
+
+                    sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil
+                    tabela = banco.Execute(sql)
+
+                    MsgBox("Perfil de custos mensais deletado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
+                    carregar_custos_mensais()
+                End If
+            End If
+
+            If .CurrentRow.Cells(2).Selected Then
+                aux_id_perfil = .CurrentRow.Cells(0).Value
+                alt_modo_edicao_custos_mensais(aux_id_perfil)
+            End If
+        End With
     End Sub
 
     Private Sub Frm_editar_custos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         carregar_custos_mensais()
+    End Sub
+
+    Private Sub btn_sair_modo_edicao_Click(sender As Object, e As EventArgs) Handles btn_sair_modo_edicao.Click
+        alt_modo_edicao_custos_mensais(aux_id_perfil)
     End Sub
 End Class

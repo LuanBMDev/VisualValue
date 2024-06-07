@@ -4,6 +4,7 @@
     Public sql As String
     Public dir_banco = Application.StartupPath & "\Banco\db_visual_value.mdb"
     Public resp
+    Public modo_edicao = False
 
     Sub Conectar_banco()
         Try
@@ -43,6 +44,43 @@
             .cmb_diatrabalhado.Text = ""
             .cmb_horatrabalhada.Text = ""
             .dgv_listacusto.Rows.Clear()
+            .dgv_listacusto.Refresh()
+        End With
+    End Sub
+
+    Sub alt_modo_edicao_custos_mensais(id_perfil As Integer)
+        modo_edicao = Not modo_edicao
+
+        With Frm_editar_custos
+            If modo_edicao = False Then
+                limpar_custos_mensais()
+                .btn_cadastar.Text = "CADASTRAR"
+                .btn_sair_modo_edicao.Hide()
+            Else
+                .btn_cadastar.Text = "EDITAR"
+                .btn_sair_modo_edicao.Show()
+                .txt_nomecusto.Clear()
+                .txt_precocusto.Clear()
+
+                sql = "SELECT * FROM tb_perfil_custos WHERE id_perfil_custos = " & id_perfil
+                tabela = banco.Execute(sql)
+
+                If tabela.EOF = False Then
+                    .txt_perfilcustos.Text = tabela.Fields(1).Value
+                    .cmb_diatrabalhado.Text = tabela.Fields(2).Value
+                    .cmb_horatrabalhada.Text = tabela.Fields(3).Value
+                End If
+
+                sql = "SELECT * FROM tb_custos_mensais WHERE id_perfil_custos = " & id_perfil
+                tabela = banco.Execute(sql)
+
+                Do While tabela.EOF = False
+                    .dgv_listacusto.Rows.Add(tabela.Fields(0).Value,
+                                             tabela.Fields(1).Value,
+                                             tabela.Fields(2).Value)
+                    tabela.MoveNext()
+                Loop
+            End If
         End With
     End Sub
 
