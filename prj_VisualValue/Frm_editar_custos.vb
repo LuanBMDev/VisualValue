@@ -29,7 +29,8 @@
 
                     If modo_edicao = True Then
                         sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador
-                        ' TODO: consertar o UPDATE pra se adaptar à quantidade de custos mensais no dgv
+                        .Rows.Remove(.Rows.Item(.CurrentCell.RowIndex))
+                        Exit Sub
                     End If
 
                     While contador < .Rows.Count
@@ -100,14 +101,15 @@
                                               " WHERE id_perfil_custos = " & aux_id_perfil
             tabela = banco.Execute(UCase(sql))
 
-            contador = 0
+            contador = 1
 
             With dgv_listacusto
-                Do While contador < .RowCount
-                    sql = "UPDATE tb_custos_mensais SET id_custo_mensal = " & .Rows(contador).Cells(0).Value & ", " &
-                                                       "nome_custo_mensal = '" & .Rows(contador).Cells(1).Value & "', " &
-                                                       "valor_custo_mensal = " & .Rows(contador).Cells(2).Value &
-                                                       " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador + 1
+                Do While contador <= .RowCount
+                    sql = "UPDATE tb_custos_mensais SET nome_custo_mensal = '" & .Rows(contador - 1).Cells(1).Value & "', " &
+                                                       "valor_custo_mensal = '" & .Rows(contador - 1).Cells(2).Value & "' " &
+                                                       " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador
+
+                    ' TODO: consertar o UPDATE quando vc adiciona ou remove custos mensais
                     tabela = banco.Execute(UCase(sql))
                     contador += 1
                 Loop
