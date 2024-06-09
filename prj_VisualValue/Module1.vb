@@ -48,8 +48,8 @@
         End With
     End Sub
 
-    Sub alt_modo_edicao_custos_mensais(id_perfil As Integer)
-        modo_edicao = Not modo_edicao
+    Sub alt_modo_edicao_custos_mensais(id_perfil As Integer, esta_na_edicao As Boolean)
+        modo_edicao = esta_na_edicao
 
         With Frm_editar_custos
             If modo_edicao = False Then
@@ -57,6 +57,7 @@
                 .btn_cadastar.Text = "CADASTRAR"
                 .btn_sair_modo_edicao.Hide()
             Else
+                limpar_custos_mensais()
                 .btn_cadastar.Text = "EDITAR"
                 .btn_sair_modo_edicao.Show()
                 .txt_nomecusto.Clear()

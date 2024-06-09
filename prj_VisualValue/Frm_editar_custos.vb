@@ -25,17 +25,17 @@
                 aux_nome_custo = .CurrentRow.Cells(1).Value
                 resp = MsgBox("Deseja remover o custo " & aux_nome_custo & "?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "ATENÇÃO")
                 If resp = MsgBoxResult.Yes Then
-                    contador = .CurrentRow.Index
+                    Dim custo_mensal_atual = .CurrentRow.Cells(0).Value
 
                     If modo_edicao = True Then
-                        sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador
+                        sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & custo_mensal_atual
                         .Rows.Remove(.Rows.Item(.CurrentCell.RowIndex))
                         Exit Sub
                     End If
 
-                    While contador < .Rows.Count
-                        .Rows(contador).Cells(0).Value = contador
-                        contador += 1
+                    While custo_mensal_atual < .Rows.Count
+                        .Rows(custo_mensal_atual).Cells(0).Value = custo_mensal_atual
+                        custo_mensal_atual += 1
                     End While
 
                     .Rows.Remove(.Rows.Item(.CurrentCell.RowIndex))
@@ -101,13 +101,13 @@
                                               " WHERE id_perfil_custos = " & aux_id_perfil
             tabela = banco.Execute(UCase(sql))
 
-            contador = 1
+            contador = 0
 
             With dgv_listacusto
-                Do While contador <= .RowCount
-                    sql = "UPDATE tb_custos_mensais SET nome_custo_mensal = '" & .Rows(contador - 1).Cells(1).Value & "', " &
-                                                       "valor_custo_mensal = '" & .Rows(contador - 1).Cells(2).Value & "' " &
-                                                       " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & contador
+                Do While contador < .RowCount
+                    sql = "UPDATE tb_custos_mensais SET nome_custo_mensal = '" & .Rows(contador).Cells(1).Value & "', " &
+                                                       "valor_custo_mensal = '" & .Rows(contador).Cells(2).Value & "' " &
+                                                       " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & .Rows(contador).Cells(0).Value
 
                     ' TODO: consertar o UPDATE quando vc adiciona ou remove custos mensais
                     tabela = banco.Execute(UCase(sql))
@@ -116,7 +116,7 @@
             End With
 
             MsgBox("Perfil de custos mensais editado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
-            alt_modo_edicao_custos_mensais(aux_id_perfil)
+            alt_modo_edicao_custos_mensais(aux_id_perfil, False)
         End If
     End Sub
 
@@ -124,7 +124,7 @@
         With dgv_listaperfil
             If .CurrentRow.Cells(3).Selected Then
                 resp = MsgBox("Deseja apagar o perfil '" & .CurrentRow.Cells(1).Value & "'?",
-                            MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
+                    MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
                 If resp = MsgBoxResult.Yes Then
                     aux_id_perfil = .CurrentRow.Cells(0).Value
 
@@ -141,16 +141,17 @@
 
             If .CurrentRow.Cells(2).Selected Then
                 aux_id_perfil = .CurrentRow.Cells(0).Value
-                alt_modo_edicao_custos_mensais(aux_id_perfil)
+                alt_modo_edicao_custos_mensais(aux_id_perfil, True)
             End If
         End With
     End Sub
 
     Private Sub Frm_editar_custos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        alt_modo_edicao_custos_mensais(aux_id_perfil, False)
         carregar_custos_mensais()
     End Sub
 
     Private Sub btn_sair_modo_edicao_Click(sender As Object, e As EventArgs) Handles btn_sair_modo_edicao.Click
-        alt_modo_edicao_custos_mensais(aux_id_perfil)
+        alt_modo_edicao_custos_mensais(aux_id_perfil, False)
     End Sub
 End Class
