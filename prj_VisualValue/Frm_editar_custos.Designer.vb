@@ -32,21 +32,23 @@ Partial Class Frm_editar_custos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_nomecusto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_preçocusto = New System.Windows.Forms.TextBox()
         Me.BunifuSeparator2 = New ns1.BunifuSeparator()
         Me.btn_adicionar = New ns1.BunifuFlatButton()
         Me.dgv_listacusto = New System.Windows.Forms.DataGridView()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Preço = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator4 = New ns1.BunifuSeparator()
         Me.dgv_listaperfil = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nome_perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Deletar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.id_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nome_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.editar_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
+        Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,9 +60,9 @@ Partial Class Frm_editar_custos
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label3.Location = New System.Drawing.Point(31, 28)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(369, 24)
+        Me.Label3.Size = New System.Drawing.Size(299, 24)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Nome da Configuração de Custos Mensais"
+        Me.Label3.Text = "Nome do Perfil de Custos Mensais"
         '
         'txt_perfilcustos
         '
@@ -93,7 +95,9 @@ Partial Class Frm_editar_custos
         '
         'cmb_diatrabalhado
         '
+        Me.cmb_diatrabalhado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_diatrabalhado.FormattingEnabled = True
+        Me.cmb_diatrabalhado.Items.AddRange(New Object() {"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"})
         Me.cmb_diatrabalhado.Location = New System.Drawing.Point(516, 64)
         Me.cmb_diatrabalhado.Name = "cmb_diatrabalhado"
         Me.cmb_diatrabalhado.Size = New System.Drawing.Size(198, 21)
@@ -101,7 +105,11 @@ Partial Class Frm_editar_custos
         '
         'cmb_horatrabalhada
         '
+        Me.cmb_horatrabalhada.DropDownHeight = 120
+        Me.cmb_horatrabalhada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_horatrabalhada.FormattingEnabled = True
+        Me.cmb_horatrabalhada.IntegralHeight = False
+        Me.cmb_horatrabalhada.Items.AddRange(New Object() {"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"})
         Me.cmb_horatrabalhada.Location = New System.Drawing.Point(754, 64)
         Me.cmb_horatrabalhada.Name = "cmb_horatrabalhada"
         Me.cmb_horatrabalhada.Size = New System.Drawing.Size(199, 21)
@@ -148,13 +156,6 @@ Partial Class Frm_editar_custos
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Preço R$"
         '
-        'txt_preçocusto
-        '
-        Me.txt_preçocusto.Location = New System.Drawing.Point(754, 156)
-        Me.txt_preçocusto.Name = "txt_preçocusto"
-        Me.txt_preçocusto.Size = New System.Drawing.Size(199, 20)
-        Me.txt_preçocusto.TabIndex = 17
-        '
         'BunifuSeparator2
         '
         Me.BunifuSeparator2.BackColor = System.Drawing.Color.Transparent
@@ -176,6 +177,7 @@ Partial Class Frm_editar_custos
         Me.btn_adicionar.ButtonText = "Adicionar"
         Me.btn_adicionar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_adicionar.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_adicionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_adicionar.Iconcolor = System.Drawing.Color.Transparent
         Me.btn_adicionar.Iconimage = Nothing
         Me.btn_adicionar.Iconimage_right = Nothing
@@ -185,7 +187,7 @@ Partial Class Frm_editar_custos
         Me.btn_adicionar.IconMarginRight = 0
         Me.btn_adicionar.IconRightVisible = True
         Me.btn_adicionar.IconRightZoom = 0R
-        Me.btn_adicionar.IconVisible = True
+        Me.btn_adicionar.IconVisible = False
         Me.btn_adicionar.IconZoom = 90.0R
         Me.btn_adicionar.IsTab = False
         Me.btn_adicionar.Location = New System.Drawing.Point(292, 199)
@@ -203,27 +205,15 @@ Partial Class Frm_editar_custos
         '
         'dgv_listacusto
         '
+        Me.dgv_listacusto.AllowUserToAddRows = False
+        Me.dgv_listacusto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_listacusto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
         Me.dgv_listacusto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_listacusto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.Preço, Me.Remover})
+        Me.dgv_listacusto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numero, Me.nome_custo, Me.preco_custo, Me.remover})
         Me.dgv_listacusto.Location = New System.Drawing.Point(35, 294)
         Me.dgv_listacusto.Name = "dgv_listacusto"
         Me.dgv_listacusto.Size = New System.Drawing.Size(918, 102)
         Me.dgv_listacusto.TabIndex = 21
-        '
-        'Nome
-        '
-        Me.Nome.HeaderText = "Column1"
-        Me.Nome.Name = "Nome"
-        '
-        'Preço
-        '
-        Me.Preço.HeaderText = "Column1"
-        Me.Preço.Name = "Preço"
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Column1"
-        Me.Remover.Name = "Remover"
         '
         'BunifuSeparator3
         '
@@ -285,32 +275,105 @@ Partial Class Frm_editar_custos
         '
         'dgv_listaperfil
         '
+        Me.dgv_listaperfil.AllowUserToAddRows = False
+        Me.dgv_listaperfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_listaperfil.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
         Me.dgv_listaperfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_listaperfil.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nome_perfil, Me.Editar, Me.Deletar})
+        Me.dgv_listaperfil.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_perfil_custo, Me.nome_perfil_custo, Me.editar_perfil_custo, Me.excluir_perfil_custo})
         Me.dgv_listaperfil.Location = New System.Drawing.Point(35, 526)
         Me.dgv_listaperfil.Name = "dgv_listaperfil"
         Me.dgv_listaperfil.Size = New System.Drawing.Size(918, 128)
         Me.dgv_listaperfil.TabIndex = 25
         '
-        'ID
+        'id_perfil_custo
         '
-        Me.ID.HeaderText = "Column1"
-        Me.ID.Name = "ID"
+        Me.id_perfil_custo.HeaderText = "ID DO PERFIL"
+        Me.id_perfil_custo.Name = "id_perfil_custo"
         '
-        'Nome_perfil
+        'nome_perfil_custo
         '
-        Me.Nome_perfil.HeaderText = "Column1"
-        Me.Nome_perfil.Name = "Nome_perfil"
+        Me.nome_perfil_custo.HeaderText = "NOME DO PERFIL"
+        Me.nome_perfil_custo.Name = "nome_perfil_custo"
         '
-        'Editar
+        'editar_perfil_custo
         '
-        Me.Editar.HeaderText = "Column1"
-        Me.Editar.Name = "Editar"
+        Me.editar_perfil_custo.HeaderText = "EDITAR"
+        Me.editar_perfil_custo.Name = "editar_perfil_custo"
+        Me.editar_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
-        'Deletar
+        'excluir_perfil_custo
         '
-        Me.Deletar.HeaderText = "Column1"
-        Me.Deletar.Name = "Deletar"
+        Me.excluir_perfil_custo.HeaderText = "EXCLUIR"
+        Me.excluir_perfil_custo.Name = "excluir_perfil_custo"
+        Me.excluir_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'txt_precocusto
+        '
+        Me.txt_precocusto.Location = New System.Drawing.Point(754, 156)
+        Me.txt_precocusto.Name = "txt_precocusto"
+        Me.txt_precocusto.PromptChar = Global.Microsoft.VisualBasic.ChrW(48)
+        Me.txt_precocusto.Size = New System.Drawing.Size(199, 20)
+        Me.txt_precocusto.TabIndex = 16
+        '
+        'btn_sair_modo_edicao
+        '
+        Me.btn_sair_modo_edicao.Activecolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_modo_edicao.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_modo_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_sair_modo_edicao.BorderRadius = 0
+        Me.btn_sair_modo_edicao.ButtonText = "Sair do modo de edição"
+        Me.btn_sair_modo_edicao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sair_modo_edicao.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_sair_modo_edicao.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_sair_modo_edicao.Iconimage = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_right = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_right_Selected = Nothing
+        Me.btn_sair_modo_edicao.Iconimage_Selected = Nothing
+        Me.btn_sair_modo_edicao.IconMarginLeft = 0
+        Me.btn_sair_modo_edicao.IconMarginRight = 0
+        Me.btn_sair_modo_edicao.IconRightVisible = True
+        Me.btn_sair_modo_edicao.IconRightZoom = 0R
+        Me.btn_sair_modo_edicao.IconVisible = True
+        Me.btn_sair_modo_edicao.IconZoom = 50.0R
+        Me.btn_sair_modo_edicao.IsTab = False
+        Me.btn_sair_modo_edicao.Location = New System.Drawing.Point(754, 452)
+        Me.btn_sair_modo_edicao.Name = "btn_sair_modo_edicao"
+        Me.btn_sair_modo_edicao.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_modo_edicao.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_modo_edicao.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_sair_modo_edicao.selected = False
+        Me.btn_sair_modo_edicao.Size = New System.Drawing.Size(168, 30)
+        Me.btn_sair_modo_edicao.TabIndex = 26
+        Me.btn_sair_modo_edicao.Text = "Sair do modo de edição"
+        Me.btn_sair_modo_edicao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_sair_modo_edicao.Textcolor = System.Drawing.Color.White
+        Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_sair_modo_edicao.Visible = False
+        '
+        'numero
+        '
+        Me.numero.HeaderText = "NUMERO"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        '
+        'nome_custo
+        '
+        Me.nome_custo.HeaderText = "NOME DO CUSTO"
+        Me.nome_custo.Name = "nome_custo"
+        '
+        'preco_custo
+        '
+        Me.preco_custo.HeaderText = "PRECO DO CUSTO"
+        Me.preco_custo.Name = "preco_custo"
+        Me.preco_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.preco_custo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'remover
+        '
+        Me.remover.HeaderText = "REMOVER"
+        Me.remover.Name = "remover"
+        Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'Frm_editar_custos
         '
@@ -318,6 +381,8 @@ Partial Class Frm_editar_custos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
+        Me.Controls.Add(Me.btn_sair_modo_edicao)
+        Me.Controls.Add(Me.txt_precocusto)
         Me.Controls.Add(Me.dgv_listaperfil)
         Me.Controls.Add(Me.BunifuSeparator4)
         Me.Controls.Add(Me.btn_cadastar)
@@ -325,7 +390,6 @@ Partial Class Frm_editar_custos
         Me.Controls.Add(Me.dgv_listacusto)
         Me.Controls.Add(Me.btn_adicionar)
         Me.Controls.Add(Me.BunifuSeparator2)
-        Me.Controls.Add(Me.txt_preçocusto)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txt_nomecusto)
         Me.Controls.Add(Me.Label4)
@@ -357,19 +421,21 @@ Partial Class Frm_editar_custos
     Friend WithEvents Label4 As Label
     Friend WithEvents txt_nomecusto As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txt_preçocusto As TextBox
     Friend WithEvents BunifuSeparator2 As ns1.BunifuSeparator
     Friend WithEvents btn_adicionar As ns1.BunifuFlatButton
-    Friend WithEvents dgv_listacusto As DataGridView
-    Friend WithEvents Nome As DataGridViewTextBoxColumn
-    Friend WithEvents Preço As DataGridViewTextBoxColumn
-    Friend WithEvents Remover As DataGridViewButtonColumn
     Friend WithEvents BunifuSeparator3 As ns1.BunifuSeparator
     Friend WithEvents btn_cadastar As ns1.BunifuFlatButton
     Friend WithEvents BunifuSeparator4 As ns1.BunifuSeparator
     Friend WithEvents dgv_listaperfil As DataGridView
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents Nome_perfil As DataGridViewTextBoxColumn
-    Friend WithEvents Editar As DataGridViewButtonColumn
-    Friend WithEvents Deletar As DataGridViewButtonColumn
+    Friend WithEvents id_perfil_custo As DataGridViewTextBoxColumn
+    Friend WithEvents nome_perfil_custo As DataGridViewTextBoxColumn
+    Friend WithEvents editar_perfil_custo As DataGridViewImageColumn
+    Friend WithEvents excluir_perfil_custo As DataGridViewImageColumn
+    Friend WithEvents dgv_listacusto As DataGridView
+    Friend WithEvents txt_precocusto As MaskedTextBox
+    Friend WithEvents btn_sair_modo_edicao As ns1.BunifuFlatButton
+    Friend WithEvents numero As DataGridViewTextBoxColumn
+    Friend WithEvents nome_custo As DataGridViewTextBoxColumn
+    Friend WithEvents preco_custo As DataGridViewTextBoxColumn
+    Friend WithEvents remover As DataGridViewImageColumn
 End Class
