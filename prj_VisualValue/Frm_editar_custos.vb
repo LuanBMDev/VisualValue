@@ -29,6 +29,7 @@
 
                     If modo_edicao = True Then
                         sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & custo_mensal_atual
+                        tabela = banco.Execute(sql)
                         .Rows.Remove(.Rows.Item(.CurrentCell.RowIndex))
                         Exit Sub
                     End If
