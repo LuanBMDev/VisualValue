@@ -35,10 +35,6 @@ Partial Class Frm_editar_custos
         Me.BunifuSeparator2 = New ns1.BunifuSeparator()
         Me.btn_adicionar = New ns1.BunifuFlatButton()
         Me.dgv_listacusto = New System.Windows.Forms.DataGridView()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator4 = New ns1.BunifuSeparator()
@@ -49,6 +45,10 @@ Partial Class Frm_editar_custos
         Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
         Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -105,8 +105,10 @@ Partial Class Frm_editar_custos
         '
         'cmb_horatrabalhada
         '
+        Me.cmb_horatrabalhada.DropDownHeight = 120
         Me.cmb_horatrabalhada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_horatrabalhada.FormattingEnabled = True
+        Me.cmb_horatrabalhada.IntegralHeight = False
         Me.cmb_horatrabalhada.Items.AddRange(New Object() {"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"})
         Me.cmb_horatrabalhada.Location = New System.Drawing.Point(754, 64)
         Me.cmb_horatrabalhada.Name = "cmb_horatrabalhada"
@@ -212,30 +214,6 @@ Partial Class Frm_editar_custos
         Me.dgv_listacusto.Name = "dgv_listacusto"
         Me.dgv_listacusto.Size = New System.Drawing.Size(918, 102)
         Me.dgv_listacusto.TabIndex = 21
-        '
-        'numero
-        '
-        Me.numero.HeaderText = "NUMERO"
-        Me.numero.Name = "numero"
-        '
-        'nome_custo
-        '
-        Me.nome_custo.HeaderText = "NOME DO CUSTO"
-        Me.nome_custo.Name = "nome_custo"
-        '
-        'preco_custo
-        '
-        Me.preco_custo.HeaderText = "PRECO DO CUSTO"
-        Me.preco_custo.Name = "preco_custo"
-        Me.preco_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.preco_custo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'remover
-        '
-        Me.remover.HeaderText = "REMOVER"
-        Me.remover.Name = "remover"
-        Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'BunifuSeparator3
         '
@@ -372,6 +350,31 @@ Partial Class Frm_editar_custos
         Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_sair_modo_edicao.Visible = False
         '
+        'numero
+        '
+        Me.numero.HeaderText = "NUMERO"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        '
+        'nome_custo
+        '
+        Me.nome_custo.HeaderText = "NOME DO CUSTO"
+        Me.nome_custo.Name = "nome_custo"
+        '
+        'preco_custo
+        '
+        Me.preco_custo.HeaderText = "PRECO DO CUSTO"
+        Me.preco_custo.Name = "preco_custo"
+        Me.preco_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.preco_custo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'remover
+        '
+        Me.remover.HeaderText = "REMOVER"
+        Me.remover.Name = "remover"
+        Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -424,10 +427,6 @@ Partial Class Frm_editar_custos
     Friend WithEvents btn_cadastar As ns1.BunifuFlatButton
     Friend WithEvents BunifuSeparator4 As ns1.BunifuSeparator
     Friend WithEvents dgv_listaperfil As DataGridView
-    Friend WithEvents numero As DataGridViewTextBoxColumn
-    Friend WithEvents nome_custo As DataGridViewTextBoxColumn
-    Friend WithEvents preco_custo As DataGridViewTextBoxColumn
-    Friend WithEvents remover As DataGridViewImageColumn
     Friend WithEvents id_perfil_custo As DataGridViewTextBoxColumn
     Friend WithEvents nome_perfil_custo As DataGridViewTextBoxColumn
     Friend WithEvents editar_perfil_custo As DataGridViewImageColumn
@@ -435,4 +434,8 @@ Partial Class Frm_editar_custos
     Friend WithEvents dgv_listacusto As DataGridView
     Friend WithEvents txt_precocusto As MaskedTextBox
     Friend WithEvents btn_sair_modo_edicao As ns1.BunifuFlatButton
+    Friend WithEvents numero As DataGridViewTextBoxColumn
+    Friend WithEvents nome_custo As DataGridViewTextBoxColumn
+    Friend WithEvents preco_custo As DataGridViewTextBoxColumn
+    Friend WithEvents remover As DataGridViewImageColumn
 End Class

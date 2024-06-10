@@ -58,7 +58,7 @@
                 .btn_sair_modo_edicao.Hide()
             Else
                 limpar_custos_mensais()
-                .btn_cadastar.Text = "EDITAR"
+                .btn_cadastar.Text = "SALVAR ALTERAÇÕES"
                 .btn_sair_modo_edicao.Show()
                 .txt_nomecusto.Clear()
                 .txt_precocusto.Clear()
