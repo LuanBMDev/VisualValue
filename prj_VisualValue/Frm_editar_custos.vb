@@ -2,15 +2,18 @@
     Dim contador As Integer
     Dim aux_nome_custo
     Dim aux_id_perfil
+    Dim prox_indice
 
     Private Sub btn_adicionar_Click(sender As Object, e As EventArgs) Handles btn_adicionar.Click
         validar_caixa_de_preco(txt_precocusto)
-
         If txt_nomecusto.Text = "" Or txt_precocusto.Text = "" Then
             MsgBox("Informe um nome e preço para o custo a ser adicionado!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "ATENÇÃO")
         Else
             With dgv_listacusto
-                .Rows.Add(.Rows.Count + 1, txt_nomecusto.Text, txt_precocusto.Text, Nothing)
+
+                prox_indice = (.Rows(.Rows.Count - 1).Cells(0).Value) + 1
+
+                .Rows.Add(prox_indice, txt_nomecusto.Text, txt_precocusto.Text, Nothing)
             End With
 
             txt_nomecusto.Clear()
@@ -109,9 +112,21 @@
                     sql = "UPDATE tb_custos_mensais SET nome_custo_mensal = '" & .Rows(contador).Cells(1).Value & "', " &
                                                        "valor_custo_mensal = '" & .Rows(contador).Cells(2).Value & "' " &
                                                        " WHERE id_perfil_custos = " & aux_id_perfil & " AND id_custo_mensal = " & .Rows(contador).Cells(0).Value
-
-                    ' TODO: consertar o UPDATE quando vc adiciona ou remove custos mensais
                     tabela = banco.Execute(UCase(sql))
+
+                    sql = "SELECT COUNT(*) FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil
+                    tabela = banco.Execute(sql)
+
+                    Dim quant_custos = tabela.Fields(0).Value
+
+                    If .RowCount > quant_custos And contador >= quant_custos Then
+                        sql = "INSERT INTO tb_custos_mensais (id_custo_mensal, nome_custo_mensal, valor_custo_mensal, id_perfil_custos) VALUES (" &
+                                           .Rows(contador).Cells(0).Value & ", " &
+                                     "'" & .Rows(contador).Cells(1).Value & "', " &
+                                     "'" & .Rows(contador).Cells(2).Value & "', " &
+                                           aux_id_perfil & ")"
+                        tabela = banco.Execute(UCase(sql))
+                    End If
                     contador += 1
                 Loop
             End With
