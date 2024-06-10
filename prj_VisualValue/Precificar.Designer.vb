@@ -49,22 +49,29 @@ Partial Class Frm_Precificar
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.somacustomensal = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.valorhora = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_tempoproducao = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.precomin = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.precofinal = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.valorlegenda = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.valordiferenca = New System.Windows.Forms.Label()
+        Me.valorsimples = New System.Windows.Forms.Label()
+        Me.valormedia = New System.Windows.Forms.Label()
+        Me.valorcomplexo = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cmb_perfilcusto
@@ -142,7 +149,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaosimples.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaosimples.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaosimples.Checked = False
-        Me.cb_edicaosimples.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.cb_edicaosimples.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.cb_edicaosimples.ForeColor = System.Drawing.Color.White
         Me.cb_edicaosimples.Location = New System.Drawing.Point(598, 272)
         Me.cb_edicaosimples.Name = "cb_edicaosimples"
@@ -154,7 +161,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaomedia.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaomedia.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaomedia.Checked = False
-        Me.cb_edicaomedia.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.cb_edicaomedia.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.cb_edicaomedia.ForeColor = System.Drawing.Color.White
         Me.cb_edicaomedia.Location = New System.Drawing.Point(598, 314)
         Me.cb_edicaomedia.Name = "cb_edicaomedia"
@@ -166,7 +173,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaocomplexa.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaocomplexa.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_edicaocomplexa.Checked = False
-        Me.cb_edicaocomplexa.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.cb_edicaocomplexa.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.cb_edicaocomplexa.ForeColor = System.Drawing.Color.White
         Me.cb_edicaocomplexa.Location = New System.Drawing.Point(598, 362)
         Me.cb_edicaocomplexa.Name = "cb_edicaocomplexa"
@@ -224,7 +231,7 @@ Partial Class Frm_Precificar
         Me.cb_legendas.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_legendas.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.cb_legendas.Checked = False
-        Me.cb_legendas.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.cb_legendas.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.cb_legendas.ForeColor = System.Drawing.Color.White
         Me.cb_legendas.Location = New System.Drawing.Point(270, 300)
         Me.cb_legendas.Name = "cb_legendas"
@@ -246,21 +253,21 @@ Partial Class Frm_Precificar
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(296, 321)
+        Me.Label8.Location = New System.Drawing.Point(324, 325)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(143, 13)
+        Me.Label8.Size = New System.Drawing.Size(102, 13)
         Me.Label8.TabIndex = 17
-        Me.Label8.Text = "R$ 0,75 por minuto de vídeo"
+        Me.Label8.Text = "por minuto de vídeo"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label9.Location = New System.Drawing.Point(267, 365)
+        Me.Label9.Location = New System.Drawing.Point(332, 365)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(142, 13)
+        Me.Label9.Size = New System.Drawing.Size(92, 13)
         Me.Label9.TabIndex = 18
-        Me.Label9.Text = "(+ R$ 3,00 a cada 10 min de"
+        Me.Label9.Text = " a cada 10 min de"
         '
         'Label10
         '
@@ -311,9 +318,9 @@ Partial Class Frm_Precificar
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label14.Location = New System.Drawing.Point(625, 292)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(200, 13)
+        Me.Label14.Size = New System.Drawing.Size(188, 13)
         Me.Label14.TabIndex = 23
-        Me.Label14.Text = "(efeitos de transição, trilha sonora): R$25"
+        Me.Label14.Text = "(efeitos de transição, trilha sonora): R$"
         '
         'Label15
         '
@@ -321,9 +328,9 @@ Partial Class Frm_Precificar
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label15.Location = New System.Drawing.Point(625, 338)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(178, 13)
+        Me.Label15.Size = New System.Drawing.Size(157, 13)
         Me.Label15.TabIndex = 24
-        Me.Label15.Text = "(simples + efeitos especiais): R$ 100"
+        Me.Label15.Text = "(simples + efeitos especiais): R$"
         '
         'Label16
         '
@@ -331,9 +338,9 @@ Partial Class Frm_Precificar
         Me.Label16.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label16.Location = New System.Drawing.Point(625, 386)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(274, 13)
+        Me.Label16.Size = New System.Drawing.Size(253, 13)
         Me.Label16.TabIndex = 25
-        Me.Label16.Text = "(simples + mediana + Modelagem3D, Animação): R$ 200"
+        Me.Label16.Text = "(simples + mediana + Modelagem3D, Animação): R$"
         '
         'Label17
         '
@@ -342,20 +349,20 @@ Partial Class Frm_Precificar
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label17.Location = New System.Drawing.Point(416, 96)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(237, 24)
+        Me.Label17.Size = New System.Drawing.Size(265, 24)
         Me.Label17.TabIndex = 26
-        Me.Label17.Text = "Soma dos Custos Mensais:"
+        Me.Label17.Text = "Soma dos Custos Mensais: R$"
         '
-        'Label18
+        'somacustomensal
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label18.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label18.Location = New System.Drawing.Point(647, 96)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 24)
-        Me.Label18.TabIndex = 27
-        Me.Label18.Text = "R$00,00"
+        Me.somacustomensal.AutoSize = True
+        Me.somacustomensal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.somacustomensal.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.somacustomensal.Location = New System.Drawing.Point(681, 96)
+        Me.somacustomensal.Name = "somacustomensal"
+        Me.somacustomensal.Size = New System.Drawing.Size(55, 24)
+        Me.somacustomensal.TabIndex = 27
+        Me.somacustomensal.Text = "00,00"
         '
         'Label19
         '
@@ -375,26 +382,26 @@ Partial Class Frm_Precificar
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label20.Location = New System.Drawing.Point(416, 166)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(130, 24)
+        Me.Label20.Size = New System.Drawing.Size(158, 24)
         Me.Label20.TabIndex = 29
-        Me.Label20.Text = "Sua hora vale:"
+        Me.Label20.Text = "Sua hora vale: R$"
         '
-        'Label21
+        'valorhora
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label21.Location = New System.Drawing.Point(540, 166)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(78, 24)
-        Me.Label21.TabIndex = 30
-        Me.Label21.Text = "R$00,00"
+        Me.valorhora.AutoSize = True
+        Me.valorhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.valorhora.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valorhora.Location = New System.Drawing.Point(580, 166)
+        Me.valorhora.Name = "valorhora"
+        Me.valorhora.Size = New System.Drawing.Size(55, 24)
+        Me.valorhora.TabIndex = 30
+        Me.valorhora.Text = "00,00"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label22.Location = New System.Drawing.Point(622, 174)
+        Me.Label22.Location = New System.Drawing.Point(641, 174)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(180, 13)
         Me.Label22.TabIndex = 31
@@ -438,16 +445,16 @@ Partial Class Frm_Precificar
         Me.Label25.TabIndex = 35
         Me.Label25.Text = "Preço Mínimo"
         '
-        'Label26
+        'precomin
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label26.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label26.Location = New System.Drawing.Point(331, 506)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(78, 24)
-        Me.Label26.TabIndex = 36
-        Me.Label26.Text = "R$00,00"
+        Me.precomin.AutoSize = True
+        Me.precomin.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.precomin.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.precomin.Location = New System.Drawing.Point(331, 506)
+        Me.precomin.Name = "precomin"
+        Me.precomin.Size = New System.Drawing.Size(78, 24)
+        Me.precomin.TabIndex = 36
+        Me.precomin.Text = "R$00,00"
         '
         'Label27
         '
@@ -460,16 +467,16 @@ Partial Class Frm_Precificar
         Me.Label27.TabIndex = 37
         Me.Label27.Text = "Preço Final"
         '
-        'Label28
+        'precofinal
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.25!)
-        Me.Label28.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label28.Location = New System.Drawing.Point(699, 506)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(94, 26)
-        Me.Label28.TabIndex = 38
-        Me.Label28.Text = "R$00,00"
+        Me.precofinal.AutoSize = True
+        Me.precofinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.25!)
+        Me.precofinal.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.precofinal.Location = New System.Drawing.Point(699, 506)
+        Me.precofinal.Name = "precofinal"
+        Me.precofinal.Size = New System.Drawing.Size(94, 26)
+        Me.precofinal.TabIndex = 38
+        Me.precofinal.Text = "R$00,00"
         '
         'Label29
         '
@@ -511,28 +518,105 @@ Partial Class Frm_Precificar
         Me.Label32.TabIndex = 42
         Me.Label32.Text = "serviços da edição)"
         '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label33.Location = New System.Drawing.Point(267, 325)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(21, 13)
+        Me.Label33.TabIndex = 43
+        Me.Label33.Text = "R$"
+        '
+        'valorlegenda
+        '
+        Me.valorlegenda.AutoSize = True
+        Me.valorlegenda.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valorlegenda.Location = New System.Drawing.Point(286, 325)
+        Me.valorlegenda.Name = "valorlegenda"
+        Me.valorlegenda.Size = New System.Drawing.Size(34, 13)
+        Me.valorlegenda.TabIndex = 44
+        Me.valorlegenda.Text = "00,00"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label35.Location = New System.Drawing.Point(269, 365)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(27, 13)
+        Me.Label35.TabIndex = 45
+        Me.Label35.Text = "(R$ "
+        '
+        'valordiferenca
+        '
+        Me.valordiferenca.AutoSize = True
+        Me.valordiferenca.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valordiferenca.Location = New System.Drawing.Point(296, 365)
+        Me.valordiferenca.Name = "valordiferenca"
+        Me.valordiferenca.Size = New System.Drawing.Size(34, 13)
+        Me.valordiferenca.TabIndex = 46
+        Me.valordiferenca.Text = "00,00"
+        '
+        'valorsimples
+        '
+        Me.valorsimples.AutoSize = True
+        Me.valorsimples.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valorsimples.Location = New System.Drawing.Point(819, 292)
+        Me.valorsimples.Name = "valorsimples"
+        Me.valorsimples.Size = New System.Drawing.Size(34, 13)
+        Me.valorsimples.TabIndex = 47
+        Me.valorsimples.Text = "00,00"
+        '
+        'valormedia
+        '
+        Me.valormedia.AutoSize = True
+        Me.valormedia.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valormedia.Location = New System.Drawing.Point(786, 338)
+        Me.valormedia.Name = "valormedia"
+        Me.valormedia.Size = New System.Drawing.Size(34, 13)
+        Me.valormedia.TabIndex = 48
+        Me.valormedia.Text = "00,00"
+        '
+        'valorcomplexo
+        '
+        Me.valorcomplexo.AutoSize = True
+        Me.valorcomplexo.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.valorcomplexo.Location = New System.Drawing.Point(884, 386)
+        Me.valorcomplexo.Name = "valorcomplexo"
+        Me.valorcomplexo.Size = New System.Drawing.Size(34, 13)
+        Me.valorcomplexo.TabIndex = 49
+        Me.valorcomplexo.Text = "00,00"
+        '
         'Frm_Precificar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 601)
+        Me.Controls.Add(Me.valorcomplexo)
+        Me.Controls.Add(Me.valormedia)
+        Me.Controls.Add(Me.valorsimples)
+        Me.Controls.Add(Me.valordiferenca)
+        Me.Controls.Add(Me.Label35)
+        Me.Controls.Add(Me.valorlegenda)
+        Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.Label32)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label30)
         Me.Controls.Add(Me.Label29)
-        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.precofinal)
         Me.Controls.Add(Me.Label27)
-        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.precomin)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.txt_tempoproducao)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.valorhora)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.somacustomensal)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
@@ -596,20 +680,27 @@ Partial Class Frm_Precificar
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents somacustomensal As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label21 As Label
+    Friend WithEvents valorhora As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents txt_tempoproducao As TextBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
+    Friend WithEvents precomin As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents Label28 As Label
+    Friend WithEvents precofinal As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents valorlegenda As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents valordiferenca As Label
+    Friend WithEvents valorsimples As Label
+    Friend WithEvents valormedia As Label
+    Friend WithEvents valorcomplexo As Label
 End Class
