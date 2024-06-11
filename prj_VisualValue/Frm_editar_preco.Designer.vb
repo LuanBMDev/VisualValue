@@ -377,6 +377,7 @@ Partial Class Frm_editar_preco
         '
         'dgv_precos
         '
+        Me.dgv_precos.AllowUserToAddRows = False
         Me.dgv_precos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_precos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nome, Me.Editar, Me.Deletar})
         Me.dgv_precos.Location = New System.Drawing.Point(33, 457)
