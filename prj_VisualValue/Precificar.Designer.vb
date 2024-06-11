@@ -22,6 +22,7 @@ Partial Class Frm_Precificar
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Precificar))
         Me.cmb_perfilcusto = New System.Windows.Forms.ComboBox()
         Me.cmb_perfilpreco = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -72,10 +73,13 @@ Partial Class Frm_Precificar
         Me.valorsimples = New System.Windows.Forms.Label()
         Me.valormedia = New System.Windows.Forms.Label()
         Me.valorcomplexo = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_perfilcusto
         '
+        Me.cmb_perfilcusto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_perfilcusto.FormattingEnabled = True
         Me.cmb_perfilcusto.Location = New System.Drawing.Point(73, 112)
         Me.cmb_perfilcusto.Name = "cmb_perfilcusto"
@@ -84,6 +88,7 @@ Partial Class Frm_Precificar
         '
         'cmb_perfilpreco
         '
+        Me.cmb_perfilpreco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_perfilpreco.FormattingEnabled = True
         Me.cmb_perfilpreco.Location = New System.Drawing.Point(73, 166)
         Me.cmb_perfilpreco.Name = "cmb_perfilpreco"
@@ -531,10 +536,11 @@ Partial Class Frm_Precificar
         'valorlegenda
         '
         Me.valorlegenda.AutoSize = True
-        Me.valorlegenda.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.valorlegenda.Location = New System.Drawing.Point(286, 325)
+        Me.valorlegenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.valorlegenda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.valorlegenda.Location = New System.Drawing.Point(294, 323)
         Me.valorlegenda.Name = "valorlegenda"
-        Me.valorlegenda.Size = New System.Drawing.Size(34, 13)
+        Me.valorlegenda.Size = New System.Drawing.Size(38, 16)
         Me.valorlegenda.TabIndex = 44
         Me.valorlegenda.Text = "00,00"
         '
@@ -551,42 +557,56 @@ Partial Class Frm_Precificar
         'valordiferenca
         '
         Me.valordiferenca.AutoSize = True
-        Me.valordiferenca.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.valordiferenca.Location = New System.Drawing.Point(296, 365)
+        Me.valordiferenca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.valordiferenca.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.valordiferenca.Location = New System.Drawing.Point(294, 363)
         Me.valordiferenca.Name = "valordiferenca"
-        Me.valordiferenca.Size = New System.Drawing.Size(34, 13)
+        Me.valordiferenca.Size = New System.Drawing.Size(38, 16)
         Me.valordiferenca.TabIndex = 46
         Me.valordiferenca.Text = "00,00"
         '
         'valorsimples
         '
         Me.valorsimples.AutoSize = True
-        Me.valorsimples.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.valorsimples.Location = New System.Drawing.Point(819, 292)
+        Me.valorsimples.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.valorsimples.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.valorsimples.Location = New System.Drawing.Point(819, 289)
         Me.valorsimples.Name = "valorsimples"
-        Me.valorsimples.Size = New System.Drawing.Size(34, 13)
+        Me.valorsimples.Size = New System.Drawing.Size(38, 16)
         Me.valorsimples.TabIndex = 47
         Me.valorsimples.Text = "00,00"
         '
         'valormedia
         '
         Me.valormedia.AutoSize = True
-        Me.valormedia.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.valormedia.Location = New System.Drawing.Point(786, 338)
+        Me.valormedia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.valormedia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.valormedia.Location = New System.Drawing.Point(788, 336)
         Me.valormedia.Name = "valormedia"
-        Me.valormedia.Size = New System.Drawing.Size(34, 13)
+        Me.valormedia.Size = New System.Drawing.Size(38, 16)
         Me.valormedia.TabIndex = 48
         Me.valormedia.Text = "00,00"
         '
         'valorcomplexo
         '
         Me.valorcomplexo.AutoSize = True
-        Me.valorcomplexo.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.valorcomplexo.Location = New System.Drawing.Point(884, 386)
+        Me.valorcomplexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.valorcomplexo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.valorcomplexo.Location = New System.Drawing.Point(884, 384)
         Me.valorcomplexo.Name = "valorcomplexo"
-        Me.valorcomplexo.Size = New System.Drawing.Size(34, 13)
+        Me.valorcomplexo.Size = New System.Drawing.Size(38, 16)
         Me.valorcomplexo.TabIndex = 49
         Me.valorcomplexo.Text = "00,00"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(727, 9)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(260, 80)
+        Me.PictureBox1.TabIndex = 50
+        Me.PictureBox1.TabStop = False
         '
         'Frm_Precificar
         '
@@ -594,6 +614,7 @@ Partial Class Frm_Precificar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 601)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.valorcomplexo)
         Me.Controls.Add(Me.valormedia)
         Me.Controls.Add(Me.valorsimples)
@@ -648,6 +669,7 @@ Partial Class Frm_Precificar
         Me.Name = "Frm_Precificar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Precificar"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -703,4 +725,5 @@ Partial Class Frm_Precificar
     Friend WithEvents valorsimples As Label
     Friend WithEvents valormedia As Label
     Friend WithEvents valorcomplexo As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

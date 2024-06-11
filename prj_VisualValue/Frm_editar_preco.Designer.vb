@@ -51,6 +51,10 @@ Partial Class Frm_editar_preco
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.dgv_precos = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Editar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Deletar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -59,10 +63,6 @@ Partial Class Frm_editar_preco
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_precolegenda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Deletar = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -384,6 +384,31 @@ Partial Class Frm_editar_preco
         Me.dgv_precos.Size = New System.Drawing.Size(936, 189)
         Me.dgv_precos.TabIndex = 41
         '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        '
+        'Nome
+        '
+        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nome.HeaderText = "Perfil"
+        Me.Nome.Name = "Nome"
+        '
+        'Editar
+        '
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
+        Me.Editar.Name = "Editar"
+        Me.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'Deletar
+        '
+        Me.Deletar.HeaderText = "Deletar"
+        Me.Deletar.Image = CType(resources.GetObject("Deletar.Image"), System.Drawing.Image)
+        Me.Deletar.Name = "Deletar"
+        Me.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -450,7 +475,7 @@ Partial Class Frm_editar_preco
         Me.Label24.BackColor = System.Drawing.Color.White
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
         Me.Label24.ForeColor = System.Drawing.Color.Red
-        Me.Label24.Location = New System.Drawing.Point(937, 203)
+        Me.Label24.Location = New System.Drawing.Point(937, 204)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(15, 20)
         Me.Label24.TabIndex = 47
@@ -473,31 +498,6 @@ Partial Class Frm_editar_preco
         Me.PictureBox1.Size = New System.Drawing.Size(260, 80)
         Me.PictureBox1.TabIndex = 48
         Me.PictureBox1.TabStop = False
-        '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        '
-        'Nome
-        '
-        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nome.HeaderText = "Perfil"
-        Me.Nome.Name = "Nome"
-        '
-        'Editar
-        '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
-        Me.Editar.Name = "Editar"
-        Me.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Deletar
-        '
-        Me.Deletar.HeaderText = "Deletar"
-        Me.Deletar.Image = CType(resources.GetObject("Deletar.Image"), System.Drawing.Image)
-        Me.Deletar.Name = "Deletar"
-        Me.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'Frm_editar_preco
         '
