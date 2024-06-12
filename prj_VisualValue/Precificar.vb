@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Runtime.CompilerServices
+Imports ns1
 
 Public Class Frm_Precificar
 
@@ -12,12 +14,22 @@ Public Class Frm_Precificar
     Dim tempo_bruto As Double
     Dim tempo_final As Double
     Dim resultado_tempo_video As Double
+    Dim custo_pacote_edicao As Double
+    Dim preco_legenda As Double
+    Dim preco_minimo As Double
 
     Dim aux_id_perfil As Integer
     Dim aux_nome_perfil_custos As String
     Dim aux_nome_perfil_precos
 
     Private Sub Precificar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        limpar_precificacao()
+
+        preco_minimo = FormatNumber(0, 2)
+        tipo_de_pacote = 0
+        preco_legenda = FormatNumber(0, 2)
+        resultado_tempo_video = FormatNumber(0, 2)
+
         carregar_perfil_custo_mensal()
         Frm_Menu.Hide()
         carregar_dados()
@@ -28,30 +40,28 @@ Public Class Frm_Precificar
     End Sub
 
     Private Sub txt_tempoproducao_TextChanged(sender As Object, e As EventArgs) Handles txt_tempoproducao.TextChanged
-        'calculo_precificar()
+        'update_preco_minimo()
     End Sub
 
-    Private Sub calculo_precificar()
-        precomin.Text = FormatNumber(custo_hora * CDbl(txt_tempoproducao.Text), 2)
+    Private Sub selecionar_pacote_edicao()
+        Select Case tipo_de_pacote
+            Case 0
+                custo_pacote_edicao = 0
 
+            Case 1
+                custo_pacote_edicao = CDbl(valorsimples.Text)
 
-        tempo_bruto = CDbl(txt_horas_bruto.Text)
-        'tempo_final = CDbl(txt_tempofinal.Text)
-        resultado_tempo_video = tempo_bruto / tempo_final
-        resultado_tempo_video = CDbl(valordiferenca.Text) * resultado_tempo_video
+            Case 2
+                custo_pacote_edicao = CDbl(valormedia.Text)
 
-        precofinal.Text = CDbl(precomin.Text) + resultado_tempo_video
-        If cb_legendas.Checked Then
-            precofinal.Text = tempo_final * CDbl(valorlegenda.Text)
-        End If
+            Case 3
+                custo_pacote_edicao = CDbl(valorcomplexo.Text)
 
-        If tipo_de_pacote = 1 Then
-            precofinal.Text = CDbl(precofinal.Text) + CDbl(valorsimples.Text)
-        ElseIf tipo_de_pacote = 2 Then
-            precofinal.Text = CDbl(precofinal.Text) + CDbl(valormedia.Text)
-        ElseIf tipo_de_pacote = 3 Then
-            precofinal.Text = CDbl(precofinal.Text) + CDbl(valorcomplexo.Text)
-        End If
+            Case Else
+                MsgBox("Erro ao selecionar pacote de edição.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
+        End Select
+
+        'MsgBox("Pacote de edição: R$ " & custo_pacote_edicao)
     End Sub
 
     Private Sub carregar_dados()
@@ -149,7 +159,11 @@ Public Class Frm_Precificar
         valormedia.Text = FormatNumber(tabela.Fields(5).Value, 2).ToString
         valorcomplexo.Text = FormatNumber(tabela.Fields(6).Value, 2).ToString
 
-
+        calc_diff_bruto_e_final()
+        selecionar_pacote_edicao()
+        calc_preco_legenda(cb_legendas)
+        update_preco_minimo()
+        calcular_preco_final()
     End Sub
 
     Private Sub cb_edicaosimples_OnChange(sender As Object, e As EventArgs) Handles cb_edicaosimples.OnChange
@@ -157,7 +171,13 @@ Public Class Frm_Precificar
             cb_edicaomedia.Checked = False
             cb_edicaocomplexa.Checked = False
             tipo_de_pacote = 1
+
+        Else
+            tipo_de_pacote = 0
         End If
+
+        selecionar_pacote_edicao()
+        calcular_preco_final()
     End Sub
 
     Private Sub cb_edicaomedia_OnChange(sender As Object, e As EventArgs) Handles cb_edicaomedia.OnChange
@@ -165,7 +185,12 @@ Public Class Frm_Precificar
             cb_edicaocomplexa.Checked = False
             cb_edicaosimples.Checked = False
             tipo_de_pacote = 2
+        Else
+            tipo_de_pacote = 0
         End If
+
+        selecionar_pacote_edicao()
+        calcular_preco_final()
     End Sub
 
     Private Sub cb_edicaocomplexa_OnChange(sender As Object, e As EventArgs) Handles cb_edicaocomplexa.OnChange
@@ -173,13 +198,21 @@ Public Class Frm_Precificar
             cb_edicaosimples.Checked = False
             cb_edicaomedia.Checked = False
             tipo_de_pacote = 3
+
+        Else
+            tipo_de_pacote = 0
         End If
+
+        selecionar_pacote_edicao()
+        calcular_preco_final()
     End Sub
 
     Private Sub cmb_perfilcusto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_perfilcusto.SelectedIndexChanged
         aux_nome_perfil_custos = cmb_perfilcusto.SelectedItem.ToString()
         somar_custos_mensais()
         calcular_valor_hora()
+        update_preco_minimo()
+        calcular_preco_final()
     End Sub
 
     Private Sub validar_caixa_tempo(caixa_texto As TextBox)
@@ -203,8 +236,6 @@ Public Class Frm_Precificar
     Private Sub minuto_para_hora(caixa_minutos As TextBox, caixa_horas As TextBox)
         With caixa_minutos
             If CDbl(.Text) >= 60 Then
-                'caixa_horas.Text = 0
-
                 Do While .Text - 60 >= 0
                     .Text -= 60
                     caixa_horas.Text += 1
@@ -213,25 +244,150 @@ Public Class Frm_Precificar
         End With
     End Sub
 
+    Private Sub preencher_horas(caixa_horas As TextBox)
+        With caixa_horas
+            If txt_horas_final.Text = 0 Then
+                txt_horas_final.Text = .Text
+            End If
+
+            txt_tempoproducao.Text = .Text + 2
+        End With
+    End Sub
+
+    Private Sub preencher_minutos(caixa_minutos As TextBox)
+        With caixa_minutos
+            If txt_minutos_final.Text = 0 Then
+                txt_minutos_final.Text = .Text
+            End If
+        End With
+    End Sub
+
+    Private Sub inputs_campo_tempo(tecla As KeyPressEventArgs)
+        If Not IsNumeric(tecla.KeyChar) And Asc(tecla.KeyChar) <> 8 And Asc(tecla.KeyChar) <> 13 And Asc(tecla.KeyChar) <> 9 Then
+            tecla.Handled = True
+        End If
+
+        If Asc(tecla.KeyChar) = 13 Then
+            SendKeys.Send("{Tab}")
+        End If
+    End Sub
+
+    Private Function minutos_totais(caixa_horas As TextBox, caixa_minutos As TextBox)
+        Dim horas_convertidas = hora_para_minuto(caixa_horas)
+
+        Return horas_convertidas + caixa_minutos.Text
+    End Function
+
+    Private Sub calc_diff_bruto_e_final()
+        Dim duracao_bruta = minutos_totais(txt_horas_bruto, txt_minutos_bruto)
+        Dim duracao_final = minutos_totais(txt_horas_final, txt_minutos_final)
+        Dim diferenca_minutos = duracao_bruta - duracao_final
+
+        If diferenca_minutos < 0 Then
+            diferenca_minutos *= -1
+        End If
+
+        Dim qtd_dez_minutos = Int(diferenca_minutos / 10)
+
+        Dim preco_diferenca = valordiferenca.Text
+
+        resultado_tempo_video = qtd_dez_minutos * preco_diferenca
+
+        lbl_total_diferenca.Text = FormatNumber(resultado_tempo_video, 2)
+    End Sub
+
     Private Sub txt_horas_bruto_Leave(sender As Object, e As EventArgs) Handles txt_horas_bruto.Leave
         validar_caixa_tempo(txt_horas_bruto)
+        preencher_horas(txt_horas_bruto)
+        calc_diff_bruto_e_final()
     End Sub
 
     Private Sub txt_minutos_bruto_Leave(sender As Object, e As EventArgs) Handles txt_minutos_bruto.Leave
         validar_caixa_tempo(txt_minutos_bruto)
         minuto_para_hora(txt_minutos_bruto, txt_horas_bruto)
+        preencher_minutos(txt_minutos_bruto)
+        calc_diff_bruto_e_final()
     End Sub
 
     Private Sub txt_minutos_final_Leave(sender As Object, e As EventArgs) Handles txt_minutos_final.Leave
         validar_caixa_tempo(txt_minutos_final)
         minuto_para_hora(txt_minutos_final, txt_horas_final)
+        calc_diff_bruto_e_final()
+        calc_preco_legenda(cb_legendas)
     End Sub
 
     Private Sub txt_horas_final_Leave(sender As Object, e As EventArgs) Handles txt_horas_final.Leave
         validar_caixa_tempo(txt_horas_final)
+        calc_diff_bruto_e_final()
+        calc_preco_legenda(cb_legendas)
+    End Sub
+
+    Private Sub calc_preco_legenda(box_legenda As BunifuCheckbox)
+        If box_legenda.Checked Then
+            Dim duracao_final = minutos_totais(txt_horas_final, txt_minutos_final)
+            Dim preco = valorlegenda.Text
+
+            preco_legenda = duracao_final * preco
+        Else
+            preco_legenda = 0
+        End If
+
+        lbl_preco_legenda.Text = FormatNumber(preco_legenda, 2)
+    End Sub
+
+    Private Sub update_preco_minimo()
+        Dim sua_hora = CDbl(valorhora.Text)
+        Dim tempo_producao = CDbl(txt_tempoproducao.Text)
+
+        preco_minimo = FormatNumber(sua_hora * tempo_producao, 2)
+
+        precomin.Text = FormatNumber(preco_minimo, 2)
+    End Sub
+
+    Private Sub calcular_preco_final()
+        Dim soma_custos_edicao = FormatNumber(resultado_tempo_video + preco_legenda + custo_pacote_edicao, 2)
+        precofinal.Text = FormatNumber(preco_minimo + soma_custos_edicao, 2)
     End Sub
 
     Private Sub txt_tempoproducao_Leave(sender As Object, e As EventArgs) Handles txt_tempoproducao.Leave
         validar_caixa_tempo(txt_tempoproducao)
+        update_preco_minimo()
+    End Sub
+
+    Private Sub txt_horas_bruto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_horas_bruto.KeyPress
+        inputs_campo_tempo(e)
+    End Sub
+
+    Private Sub txt_minutos_bruto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_minutos_bruto.KeyPress
+        inputs_campo_tempo(e)
+    End Sub
+
+    Private Sub txt_horas_final_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_horas_final.KeyPress
+        inputs_campo_tempo(e)
+    End Sub
+
+    Private Sub txt_minutos_final_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_minutos_final.KeyPress
+        inputs_campo_tempo(e)
+    End Sub
+
+    Private Sub txt_tempoproducao_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_tempoproducao.KeyPress
+        inputs_campo_tempo(e)
+    End Sub
+
+    Private Sub cb_legendas_OnChange(sender As Object, e As EventArgs) Handles cb_legendas.OnChange
+        calc_preco_legenda(cb_legendas)
+        calcular_preco_final()
+    End Sub
+
+    Private Sub lbl_total_diferenca_TextChanged(sender As Object, e As EventArgs) Handles lbl_total_diferenca.TextChanged
+        calcular_preco_final()
+    End Sub
+
+    Private Sub lbl_preco_legenda_TextChanged(sender As Object, e As EventArgs) Handles lbl_preco_legenda.TextChanged
+        calcular_preco_final()
+    End Sub
+
+    Private Sub precomin_TextChanged(sender As Object, e As EventArgs) Handles precomin.TextChanged
+        calcular_preco_final()
     End Sub
 End Class

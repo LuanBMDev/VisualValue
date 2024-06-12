@@ -76,8 +76,8 @@ Partial Class Frm_Precificar
         Me.txt_minutos_final = New System.Windows.Forms.TextBox()
         Me.txt_horas_final = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.lbl_total_diferenca = New System.Windows.Forms.Label()
+        Me.lbl_preco_legenda = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
@@ -113,7 +113,7 @@ Partial Class Frm_Precificar
         Me.Label1.Location = New System.Drawing.Point(70, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 13)
-        Me.Label1.TabIndex = 2
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Custos mensais"
         '
         'Label2
@@ -123,7 +123,7 @@ Partial Class Frm_Precificar
         Me.Label2.Location = New System.Drawing.Point(70, 150)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 13)
-        Me.Label2.TabIndex = 3
+        Me.Label2.TabIndex = 1
         Me.Label2.Text = "Tabelas de Preços"
         '
         'BunifuSeparator1
@@ -134,7 +134,7 @@ Partial Class Frm_Precificar
         Me.BunifuSeparator1.Location = New System.Drawing.Point(12, 193)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
         Me.BunifuSeparator1.Size = New System.Drawing.Size(975, 35)
-        Me.BunifuSeparator1.TabIndex = 4
+        Me.BunifuSeparator1.TabIndex = 87
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
         '
@@ -146,7 +146,7 @@ Partial Class Frm_Precificar
         Me.Label3.Location = New System.Drawing.Point(167, 231)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(153, 24)
-        Me.Label3.TabIndex = 5
+        Me.Label3.TabIndex = 68
         Me.Label3.Text = "Tempo de Vídeo"
         '
         'Label4
@@ -157,7 +157,7 @@ Partial Class Frm_Precificar
         Me.Label4.Location = New System.Drawing.Point(662, 231)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 24)
-        Me.Label4.TabIndex = 6
+        Me.Label4.TabIndex = 86
         Me.Label4.Text = "Tipos de Edição"
         '
         'cb_edicaosimples
@@ -170,7 +170,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaosimples.Location = New System.Drawing.Point(598, 272)
         Me.cb_edicaosimples.Name = "cb_edicaosimples"
         Me.cb_edicaosimples.Size = New System.Drawing.Size(20, 20)
-        Me.cb_edicaosimples.TabIndex = 7
+        Me.cb_edicaosimples.TabIndex = 8
         '
         'cb_edicaomedia
         '
@@ -182,7 +182,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaomedia.Location = New System.Drawing.Point(598, 314)
         Me.cb_edicaomedia.Name = "cb_edicaomedia"
         Me.cb_edicaomedia.Size = New System.Drawing.Size(20, 20)
-        Me.cb_edicaomedia.TabIndex = 8
+        Me.cb_edicaomedia.TabIndex = 9
         '
         'cb_edicaocomplexa
         '
@@ -194,7 +194,7 @@ Partial Class Frm_Precificar
         Me.cb_edicaocomplexa.Location = New System.Drawing.Point(598, 362)
         Me.cb_edicaocomplexa.Name = "cb_edicaocomplexa"
         Me.cb_edicaocomplexa.Size = New System.Drawing.Size(20, 20)
-        Me.cb_edicaocomplexa.TabIndex = 9
+        Me.cb_edicaocomplexa.TabIndex = 10
         '
         'Label5
         '
@@ -203,7 +203,7 @@ Partial Class Frm_Precificar
         Me.Label5.Location = New System.Drawing.Point(63, 258)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(113, 13)
-        Me.Label5.TabIndex = 10
+        Me.Label5.TabIndex = 79
         Me.Label5.Text = "Tempo bruto de vídeo"
         '
         'Label6
@@ -221,7 +221,7 @@ Partial Class Frm_Precificar
         Me.txt_horas_bruto.Location = New System.Drawing.Point(66, 274)
         Me.txt_horas_bruto.Name = "txt_horas_bruto"
         Me.txt_horas_bruto.Size = New System.Drawing.Size(55, 20)
-        Me.txt_horas_bruto.TabIndex = 12
+        Me.txt_horas_bruto.TabIndex = 2
         Me.txt_horas_bruto.Text = "0"
         '
         'BunifuSeparator2
@@ -246,7 +246,7 @@ Partial Class Frm_Precificar
         Me.cb_legendas.Location = New System.Drawing.Point(65, 382)
         Me.cb_legendas.Name = "cb_legendas"
         Me.cb_legendas.Size = New System.Drawing.Size(20, 20)
-        Me.cb_legendas.TabIndex = 15
+        Me.cb_legendas.TabIndex = 7
         '
         'Label7
         '
@@ -413,7 +413,7 @@ Partial Class Frm_Precificar
         Me.txt_tempoproducao.Location = New System.Drawing.Point(73, 511)
         Me.txt_tempoproducao.Name = "txt_tempoproducao"
         Me.txt_tempoproducao.Size = New System.Drawing.Size(154, 20)
-        Me.txt_tempoproducao.TabIndex = 34
+        Me.txt_tempoproducao.TabIndex = 6
         Me.txt_tempoproducao.Text = "0"
         '
         'Label25
@@ -570,7 +570,7 @@ Partial Class Frm_Precificar
         Me.txt_minutos_bruto.Location = New System.Drawing.Point(153, 274)
         Me.txt_minutos_bruto.Name = "txt_minutos_bruto"
         Me.txt_minutos_bruto.Size = New System.Drawing.Size(55, 20)
-        Me.txt_minutos_bruto.TabIndex = 51
+        Me.txt_minutos_bruto.TabIndex = 3
         Me.txt_minutos_bruto.Text = "0"
         '
         'Label18
@@ -622,7 +622,7 @@ Partial Class Frm_Precificar
         Me.txt_minutos_final.Location = New System.Drawing.Point(153, 335)
         Me.txt_minutos_final.Name = "txt_minutos_final"
         Me.txt_minutos_final.Size = New System.Drawing.Size(55, 20)
-        Me.txt_minutos_final.TabIndex = 58
+        Me.txt_minutos_final.TabIndex = 5
         Me.txt_minutos_final.Text = "0"
         '
         'txt_horas_final
@@ -630,7 +630,7 @@ Partial Class Frm_Precificar
         Me.txt_horas_final.Location = New System.Drawing.Point(66, 335)
         Me.txt_horas_final.Name = "txt_horas_final"
         Me.txt_horas_final.Size = New System.Drawing.Size(55, 20)
-        Me.txt_horas_final.TabIndex = 57
+        Me.txt_horas_final.TabIndex = 4
         Me.txt_horas_final.Text = "0"
         '
         'Label10
@@ -644,27 +644,27 @@ Partial Class Frm_Precificar
         Me.Label10.TabIndex = 61
         Me.Label10.Text = "R$"
         '
-        'Label30
+        'lbl_total_diferenca
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label30.Location = New System.Drawing.Point(331, 292)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(55, 24)
-        Me.Label30.TabIndex = 63
-        Me.Label30.Text = "00,00"
+        Me.lbl_total_diferenca.AutoSize = True
+        Me.lbl_total_diferenca.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_diferenca.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbl_total_diferenca.Location = New System.Drawing.Point(331, 292)
+        Me.lbl_total_diferenca.Name = "lbl_total_diferenca"
+        Me.lbl_total_diferenca.Size = New System.Drawing.Size(55, 24)
+        Me.lbl_total_diferenca.TabIndex = 63
+        Me.lbl_total_diferenca.Text = "00,00"
         '
-        'Label28
+        'lbl_preco_legenda
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(207, 377)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(55, 24)
-        Me.Label28.TabIndex = 65
-        Me.Label28.Text = "00,00"
+        Me.lbl_preco_legenda.AutoSize = True
+        Me.lbl_preco_legenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_preco_legenda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbl_preco_legenda.Location = New System.Drawing.Point(207, 377)
+        Me.lbl_preco_legenda.Name = "lbl_preco_legenda"
+        Me.lbl_preco_legenda.Size = New System.Drawing.Size(55, 24)
+        Me.lbl_preco_legenda.TabIndex = 65
+        Me.lbl_preco_legenda.Text = "00,00"
         '
         'Label32
         '
@@ -755,9 +755,9 @@ Partial Class Frm_Precificar
         Me.Controls.Add(Me.Label37)
         Me.Controls.Add(Me.Label36)
         Me.Controls.Add(Me.Label34)
-        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.lbl_preco_legenda)
         Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.lbl_total_diferenca)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label26)
@@ -812,6 +812,7 @@ Partial Class Frm_Precificar
         Me.Controls.Add(Me.cmb_perfilpreco)
         Me.Controls.Add(Me.cmb_perfilcusto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "Frm_Precificar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Precificar"
@@ -874,8 +875,8 @@ Partial Class Frm_Precificar
     Friend WithEvents txt_minutos_final As TextBox
     Friend WithEvents txt_horas_final As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label30 As Label
-    Friend WithEvents Label28 As Label
+    Friend WithEvents lbl_total_diferenca As Label
+    Friend WithEvents lbl_preco_legenda As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents Label36 As Label

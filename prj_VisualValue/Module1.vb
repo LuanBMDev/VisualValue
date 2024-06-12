@@ -150,4 +150,24 @@
         End Select
 
     End Function
+
+    Public Sub limpar_precificacao()
+        With Frm_Precificar
+            .txt_horas_bruto.Text = 0
+            .txt_minutos_bruto.Text = 0
+
+            .txt_horas_final.Text = 0
+            .txt_minutos_final.Text = 0
+
+            .cb_legendas.Checked = False
+
+            .cb_edicaosimples.Checked = False
+            .cb_edicaomedia.Checked = False
+            .cb_edicaocomplexa.Checked = False
+
+            .txt_tempoproducao.Text = 0
+
+            .precofinal.Text = FormatNumber(0, 2)
+        End With
+    End Sub
 End Module

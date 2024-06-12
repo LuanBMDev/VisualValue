@@ -197,6 +197,7 @@
     Private Sub Frm_editar_custos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alt_modo_edicao_custos_mensais(aux_id_perfil, False)
         carregar_custos_mensais()
+        Frm_Menu.Hide()
     End Sub
 
     Private Sub btn_sair_modo_edicao_Click(sender As Object, e As EventArgs) Handles btn_sair_modo_edicao.Click
@@ -208,8 +209,8 @@
             Dim cont = 0
             With dgv_listacusto
                 Do While cont < .RowCount
-                    If .Rows(contador).Cells(2).Value < 0 Then
-                        .Rows(contador).Cells(2).Value *= -1
+                    If .Rows(cont).Cells(2).Value < 0 Then
+                        .Rows(cont).Cells(2).Value *= -1
                         Exit Sub
                     End If
                     cont += 1
@@ -218,5 +219,9 @@
         Catch ex As Exception
             MsgBox("Insira apenas números e vírgula", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
         End Try
+    End Sub
+
+    Private Sub Frm_editar_custos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Frm_Menu.Show()
     End Sub
 End Class

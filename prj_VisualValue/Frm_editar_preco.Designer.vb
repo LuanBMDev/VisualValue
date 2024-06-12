@@ -543,6 +543,7 @@ Partial Class Frm_editar_preco
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "Frm_editar_preco"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar tabela de preços"
