@@ -175,62 +175,72 @@
     End Sub
 
     Private Sub txt_precolegenda_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precolegenda.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        permitir_apenas_numeros_e_virgula(e)
+    End Sub
 
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-
-        If KeyAscii = 0 Then
-
-            e.Handled = True
-
-        End If
+    Private Sub txt_precolegenda_LostFocus(sender As Object, e As EventArgs) Handles txt_precolegenda.LostFocus
+        With txt_precolegenda
+            If .Text.StartsWith(",") Or .Text.EndsWith(",") Or tem_virgula_repetida(.Text) Then
+                MsgBox("O preço não pode conter mais de uma vírgula, nem começar ou terminar com uma." & vbNewLine & vbNewLine &
+                       "Tente Novamente!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
+                .Clear()
+            End If
+        End With
     End Sub
 
     Private Sub txt_precodiferenca_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precodiferenca.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        permitir_apenas_numeros_e_virgula(e)
+    End Sub
 
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-
-        If KeyAscii = 0 Then
-
-            e.Handled = True
-
-        End If
+    Private Sub txt_precodiferenca_LostFocus(sender As Object, e As EventArgs) Handles txt_precodiferenca.LostFocus
+        With txt_precodiferenca
+            If .Text.StartsWith(",") Or .Text.EndsWith(",") Or tem_virgula_repetida(.Text) Then
+                MsgBox("O preço não pode conter mais de uma vírgula, nem começar ou terminar com uma." & vbNewLine & vbNewLine &
+                       "Tente Novamente!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
+                .Clear()
+            End If
+        End With
     End Sub
 
     Private Sub txt_precosimples_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precosimples.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        permitir_apenas_numeros_e_virgula(e)
+    End Sub
 
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-
-        If KeyAscii = 0 Then
-
-            e.Handled = True
-
-        End If
+    Private Sub txt_precosimples_LostFocus(sender As Object, e As EventArgs) Handles txt_precosimples.LostFocus
+        With txt_precosimples
+            If .Text.StartsWith(",") Or .Text.EndsWith(",") Or tem_virgula_repetida(.Text) Then
+                MsgBox("O preço não pode conter mais de uma vírgula, nem começar ou terminar com uma." & vbNewLine & vbNewLine &
+                       "Tente Novamente!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
+                .Clear()
+            End If
+        End With
     End Sub
 
     Private Sub txt_precomedia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precomedia.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        permitir_apenas_numeros_e_virgula(e)
+    End Sub
 
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-
-        If KeyAscii = 0 Then
-
-            e.Handled = True
-
-        End If
+    Private Sub txt_precomedia_LostFocus(sender As Object, e As EventArgs) Handles txt_precomedia.LostFocus
+        With txt_precomedia
+            If .Text.StartsWith(",") Or .Text.EndsWith(",") Or tem_virgula_repetida(.Text) Then
+                MsgBox("O preço não pode conter mais de uma vírgula, nem começar ou terminar com uma." & vbNewLine & vbNewLine &
+                       "Tente Novamente!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
+                .Clear()
+            End If
+        End With
     End Sub
 
     Private Sub txt_precocomplexa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precocomplexa.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        permitir_apenas_numeros_e_virgula(e)
+    End Sub
 
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-
-        If KeyAscii = 0 Then
-
-            e.Handled = True
-
-        End If
+    Private Sub txt_precocomplexa_LostFocus(sender As Object, e As EventArgs) Handles txt_precocomplexa.LostFocus
+        With txt_precocomplexa
+            If .Text.StartsWith(",") Or .Text.EndsWith(",") Or tem_virgula_repetida(.Text) Then
+                MsgBox("O preço não pode conter mais de uma vírgula, nem começar ou terminar com uma." & vbNewLine & vbNewLine &
+                       "Tente Novamente!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
+                .Clear()
+            End If
+        End With
     End Sub
 End Class
