@@ -23,7 +23,6 @@ Partial Class Frm_editar_custos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_custos))
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_custos))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_perfilcustos = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
