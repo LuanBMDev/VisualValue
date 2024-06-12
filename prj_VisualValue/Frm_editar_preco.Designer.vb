@@ -452,7 +452,7 @@ Partial Class Frm_editar_preco
         Me.Label24.BackColor = System.Drawing.Color.White
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
         Me.Label24.ForeColor = System.Drawing.Color.Red
-        Me.Label24.Location = New System.Drawing.Point(937, 203)
+        Me.Label24.Location = New System.Drawing.Point(937, 204)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(15, 20)
         Me.Label24.TabIndex = 47
@@ -582,6 +582,7 @@ Partial Class Frm_editar_preco
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Frm_editar_preco"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar tabela de preços"

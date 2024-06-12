@@ -23,6 +23,7 @@ Partial Class Frm_editar_custos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_custos))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_custos))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_perfilcustos = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,10 +41,16 @@ Partial Class Frm_editar_custos
         Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator4 = New ns1.BunifuSeparator()
         Me.dgv_listaperfil = New System.Windows.Forms.DataGridView()
+        Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
+        Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
         Me.id_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nome_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.editar_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
@@ -171,11 +178,11 @@ Partial Class Frm_editar_custos
         '
         'btn_adicionar
         '
-        Me.btn_adicionar.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.btn_adicionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.btn_adicionar.Activecolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_adicionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.btn_adicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_adicionar.BorderRadius = 0
-        Me.btn_adicionar.ButtonText = "Adicionar"
+        Me.btn_adicionar.ButtonText = "Adicionar Custo Mensal à lista"
         Me.btn_adicionar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_adicionar.DisabledColor = System.Drawing.Color.Gray
         Me.btn_adicionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -193,13 +200,13 @@ Partial Class Frm_editar_custos
         Me.btn_adicionar.IsTab = False
         Me.btn_adicionar.Location = New System.Drawing.Point(292, 199)
         Me.btn_adicionar.Name = "btn_adicionar"
-        Me.btn_adicionar.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.btn_adicionar.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btn_adicionar.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_adicionar.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
         Me.btn_adicionar.OnHoverTextColor = System.Drawing.Color.White
         Me.btn_adicionar.selected = False
         Me.btn_adicionar.Size = New System.Drawing.Size(454, 48)
         Me.btn_adicionar.TabIndex = 20
-        Me.btn_adicionar.Text = "Adicionar"
+        Me.btn_adicionar.Text = "Adicionar Custo Mensal à lista"
         Me.btn_adicionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btn_adicionar.Textcolor = System.Drawing.Color.White
         Me.btn_adicionar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -237,6 +244,7 @@ Partial Class Frm_editar_custos
         'remover
         '
         Me.remover.HeaderText = "REMOVER"
+        Me.remover.Image = CType(resources.GetObject("remover.Image"), System.Drawing.Image)
         Me.remover.Name = "remover"
         Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
@@ -255,8 +263,8 @@ Partial Class Frm_editar_custos
         '
         'btn_cadastar
         '
-        Me.btn_cadastar.Activecolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.btn_cadastar.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_cadastar.Activecolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btn_cadastar.BackColor = System.Drawing.Color.SeaGreen
         Me.btn_cadastar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_cadastar.BorderRadius = 0
         Me.btn_cadastar.ButtonText = "CADASTRAR"
@@ -276,8 +284,8 @@ Partial Class Frm_editar_custos
         Me.btn_cadastar.IsTab = False
         Me.btn_cadastar.Location = New System.Drawing.Point(292, 443)
         Me.btn_cadastar.Name = "btn_cadastar"
-        Me.btn_cadastar.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.btn_cadastar.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.btn_cadastar.Normalcolor = System.Drawing.Color.SeaGreen
+        Me.btn_cadastar.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btn_cadastar.OnHoverTextColor = System.Drawing.Color.White
         Me.btn_cadastar.selected = False
         Me.btn_cadastar.Size = New System.Drawing.Size(454, 48)
@@ -310,28 +318,6 @@ Partial Class Frm_editar_custos
         Me.dgv_listaperfil.Name = "dgv_listaperfil"
         Me.dgv_listaperfil.Size = New System.Drawing.Size(918, 128)
         Me.dgv_listaperfil.TabIndex = 25
-        '
-        'id_perfil_custo
-        '
-        Me.id_perfil_custo.HeaderText = "ID DO PERFIL"
-        Me.id_perfil_custo.Name = "id_perfil_custo"
-        '
-        'nome_perfil_custo
-        '
-        Me.nome_perfil_custo.HeaderText = "NOME DO PERFIL"
-        Me.nome_perfil_custo.Name = "nome_perfil_custo"
-        '
-        'editar_perfil_custo
-        '
-        Me.editar_perfil_custo.HeaderText = "EDITAR"
-        Me.editar_perfil_custo.Name = "editar_perfil_custo"
-        Me.editar_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'excluir_perfil_custo
-        '
-        Me.excluir_perfil_custo.HeaderText = "EXCLUIR"
-        Me.excluir_perfil_custo.Name = "excluir_perfil_custo"
-        Me.excluir_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'txt_precocusto
         '
@@ -376,6 +362,34 @@ Partial Class Frm_editar_custos
         Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_sair_modo_edicao.Visible = False
         '
+        'id_perfil_custo
+        '
+        Me.id_perfil_custo.HeaderText = "ID DO PERFIL"
+        Me.id_perfil_custo.Name = "id_perfil_custo"
+        Me.id_perfil_custo.ReadOnly = True
+        '
+        'nome_perfil_custo
+        '
+        Me.nome_perfil_custo.HeaderText = "NOME DO PERFIL"
+        Me.nome_perfil_custo.Name = "nome_perfil_custo"
+        Me.nome_perfil_custo.ReadOnly = True
+        '
+        'editar_perfil_custo
+        '
+        Me.editar_perfil_custo.HeaderText = "EDITAR"
+        Me.editar_perfil_custo.Image = CType(resources.GetObject("editar_perfil_custo.Image"), System.Drawing.Image)
+        Me.editar_perfil_custo.Name = "editar_perfil_custo"
+        Me.editar_perfil_custo.ReadOnly = True
+        Me.editar_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'excluir_perfil_custo
+        '
+        Me.excluir_perfil_custo.HeaderText = "EXCLUIR"
+        Me.excluir_perfil_custo.Image = CType(resources.GetObject("excluir_perfil_custo.Image"), System.Drawing.Image)
+        Me.excluir_perfil_custo.Name = "excluir_perfil_custo"
+        Me.excluir_perfil_custo.ReadOnly = True
+        Me.excluir_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -402,6 +416,7 @@ Partial Class Frm_editar_custos
         Me.Controls.Add(Me.txt_perfilcustos)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_editar_custos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -429,10 +444,6 @@ Partial Class Frm_editar_custos
     Friend WithEvents btn_cadastar As ns1.BunifuFlatButton
     Friend WithEvents BunifuSeparator4 As ns1.BunifuSeparator
     Friend WithEvents dgv_listaperfil As DataGridView
-    Friend WithEvents id_perfil_custo As DataGridViewTextBoxColumn
-    Friend WithEvents nome_perfil_custo As DataGridViewTextBoxColumn
-    Friend WithEvents editar_perfil_custo As DataGridViewImageColumn
-    Friend WithEvents excluir_perfil_custo As DataGridViewImageColumn
     Friend WithEvents dgv_listacusto As DataGridView
     Friend WithEvents txt_precocusto As MaskedTextBox
     Friend WithEvents btn_sair_modo_edicao As ns1.BunifuFlatButton
@@ -440,4 +451,8 @@ Partial Class Frm_editar_custos
     Friend WithEvents nome_custo As DataGridViewTextBoxColumn
     Friend WithEvents preco_custo As DataGridViewTextBoxColumn
     Friend WithEvents remover As DataGridViewImageColumn
+    Friend WithEvents id_perfil_custo As DataGridViewTextBoxColumn
+    Friend WithEvents nome_perfil_custo As DataGridViewTextBoxColumn
+    Friend WithEvents editar_perfil_custo As DataGridViewImageColumn
+    Friend WithEvents excluir_perfil_custo As DataGridViewImageColumn
 End Class

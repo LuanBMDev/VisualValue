@@ -17,6 +17,7 @@
                                             "' where id_perfil_precos = " & idperfil & ""
                 tabela = banco.Execute(sql)
                 MsgBox("Perfil editado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
+                Limpar_dados()
                 carrgar_dados()
                 idperfil = 0
                 btn_cadastar.Text = "CADASTRAR"

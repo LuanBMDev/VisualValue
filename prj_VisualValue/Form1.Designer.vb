@@ -28,6 +28,10 @@ Partial Class Frm_Menu
         Me.btn_customensal = New ns1.BunifuFlatButton()
         Me.btn_sair = New ns1.BunifuFlatButton()
         Me.btn_custosedicao = New ns1.BunifuFlatButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -177,23 +181,69 @@ Partial Class Frm_Menu
         Me.btn_custosedicao.Textcolor = System.Drawing.Color.White
         Me.btn_custosedicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(12, 580)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(141, 13)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Nome: Luan Barbosa Morais"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(334, 580)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(131, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Nome: Carlos Daniel Chen"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(12, 593)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(106, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "RA: 1680482321037"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(359, 593)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(106, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "RA: 1680482321003"
+        '
         'Frm_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(479, 602)
+        Me.ClientSize = New System.Drawing.Size(477, 624)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btn_custosedicao)
         Me.Controls.Add(Me.btn_sair)
         Me.Controls.Add(Me.btn_customensal)
         Me.Controls.Add(Me.btn_precificar)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "Frm_Menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu Principal"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -202,4 +252,8 @@ Partial Class Frm_Menu
     Friend WithEvents btn_customensal As ns1.BunifuFlatButton
     Friend WithEvents btn_sair As ns1.BunifuFlatButton
     Friend WithEvents btn_custosedicao As ns1.BunifuFlatButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

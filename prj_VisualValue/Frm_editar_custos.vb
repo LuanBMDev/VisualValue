@@ -159,20 +159,22 @@
     Private Sub dgv_listaperfil_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listaperfil.CellContentClick
         With dgv_listaperfil
             Try
-                If .CurrentRow.Cells(3).Selected Then
-                    resp = MsgBox("Deseja apagar o perfil '" & .CurrentRow.Cells(1).Value & "'?",
-                        MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
-                    If resp = MsgBoxResult.Yes Then
-                        aux_id_perfil = .CurrentRow.Cells(0).Value
+                If .RowCount > 0 Then
+                    If .CurrentRow.Cells(3).Selected Then
+                        resp = MsgBox("Deseja apagar o perfil '" & .CurrentRow.Cells(1).Value & "'?",
+                            MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
+                        If resp = MsgBoxResult.Yes Then
+                            aux_id_perfil = .CurrentRow.Cells(0).Value
 
-                        sql = "DELETE FROM tb_perfil_custos WHERE id_perfil_custos = " & aux_id_perfil
-                        tabela = banco.Execute(sql)
+                            sql = "DELETE FROM tb_perfil_custos WHERE id_perfil_custos = " & aux_id_perfil
+                            tabela = banco.Execute(sql)
 
-                        sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil
-                        tabela = banco.Execute(sql)
+                            sql = "DELETE FROM tb_custos_mensais WHERE id_perfil_custos = " & aux_id_perfil
+                            tabela = banco.Execute(sql)
 
-                        MsgBox("Perfil de custos mensais deletado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
-                        carregar_custos_mensais()
+                            MsgBox("Perfil de custos mensais deletado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "AVISO")
+                            carregar_custos_mensais()
+                        End If
                     End If
                 End If
             Catch ex As Exception
@@ -180,9 +182,11 @@
             End Try
 
             Try
-                If .CurrentRow.Cells(2).Selected Then
-                    aux_id_perfil = .CurrentRow.Cells(0).Value
-                    alt_modo_edicao_custos_mensais(aux_id_perfil, True)
+                If .RowCount > 0 Then
+                    If .CurrentRow.Cells(2).Selected Then
+                        aux_id_perfil = .CurrentRow.Cells(0).Value
+                        alt_modo_edicao_custos_mensais(aux_id_perfil, True)
+                    End If
                 End If
             Catch ex As Exception
                 MsgBox("Erro ao entrar no modo de edição")
@@ -193,6 +197,7 @@
     Private Sub Frm_editar_custos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alt_modo_edicao_custos_mensais(aux_id_perfil, False)
         carregar_custos_mensais()
+        Frm_Menu.Hide()
     End Sub
 
     Private Sub btn_sair_modo_edicao_Click(sender As Object, e As EventArgs) Handles btn_sair_modo_edicao.Click
@@ -204,8 +209,8 @@
             Dim cont = 0
             With dgv_listacusto
                 Do While cont < .RowCount
-                    If .Rows(contador).Cells(2).Value < 0 Then
-                        .Rows(contador).Cells(2).Value *= -1
+                    If .Rows(cont).Cells(2).Value < 0 Then
+                        .Rows(cont).Cells(2).Value *= -1
                         Exit Sub
                     End If
                     cont += 1
@@ -214,5 +219,9 @@
         Catch ex As Exception
             MsgBox("Insira apenas números e vírgula", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
         End Try
+    End Sub
+
+    Private Sub Frm_editar_custos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Frm_Menu.Show()
     End Sub
 End Class
