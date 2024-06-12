@@ -51,10 +51,6 @@ Partial Class Frm_editar_preco
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.dgv_precos = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Deletar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -63,6 +59,11 @@ Partial Class Frm_editar_preco
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_precolegenda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btn_sair_edicao = New ns1.BunifuFlatButton()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Editar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Deletar = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_precos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -385,31 +386,6 @@ Partial Class Frm_editar_preco
         Me.dgv_precos.Size = New System.Drawing.Size(936, 189)
         Me.dgv_precos.TabIndex = 41
         '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        '
-        'Nome
-        '
-        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nome.HeaderText = "Perfil"
-        Me.Nome.Name = "Nome"
-        '
-        'Editar
-        '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
-        Me.Editar.Name = "Editar"
-        Me.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Deletar
-        '
-        Me.Deletar.HeaderText = "Deletar"
-        Me.Deletar.Image = CType(resources.GetObject("Deletar.Image"), System.Drawing.Image)
-        Me.Deletar.Name = "Deletar"
-        Me.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -500,12 +476,74 @@ Partial Class Frm_editar_preco
         Me.PictureBox1.TabIndex = 48
         Me.PictureBox1.TabStop = False
         '
+        'btn_sair_edicao
+        '
+        Me.btn_sair_edicao.Activecolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_edicao.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_sair_edicao.BorderRadius = 0
+        Me.btn_sair_edicao.ButtonText = "Sair do modo edição"
+        Me.btn_sair_edicao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sair_edicao.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_sair_edicao.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_sair_edicao.Iconimage = Nothing
+        Me.btn_sair_edicao.Iconimage_right = Nothing
+        Me.btn_sair_edicao.Iconimage_right_Selected = Nothing
+        Me.btn_sair_edicao.Iconimage_Selected = Nothing
+        Me.btn_sair_edicao.IconMarginLeft = 0
+        Me.btn_sair_edicao.IconMarginRight = 0
+        Me.btn_sair_edicao.IconRightVisible = True
+        Me.btn_sair_edicao.IconRightZoom = 0R
+        Me.btn_sair_edicao.IconVisible = True
+        Me.btn_sair_edicao.IconZoom = 90.0R
+        Me.btn_sair_edicao.IsTab = False
+        Me.btn_sair_edicao.Location = New System.Drawing.Point(786, 362)
+        Me.btn_sair_edicao.Name = "btn_sair_edicao"
+        Me.btn_sair_edicao.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.btn_sair_edicao.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_sair_edicao.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_sair_edicao.selected = False
+        Me.btn_sair_edicao.Size = New System.Drawing.Size(183, 48)
+        Me.btn_sair_edicao.TabIndex = 49
+        Me.btn_sair_edicao.Text = "Sair do modo edição"
+        Me.btn_sair_edicao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_sair_edicao.Textcolor = System.Drawing.Color.White
+        Me.btn_sair_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Nome
+        '
+        Me.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nome.HeaderText = "Perfil"
+        Me.Nome.Name = "Nome"
+        Me.Nome.ReadOnly = True
+        '
+        'Editar
+        '
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
+        Me.Editar.Name = "Editar"
+        Me.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'Deletar
+        '
+        Me.Deletar.HeaderText = "Deletar"
+        Me.Deletar.Image = CType(resources.GetObject("Deletar.Image"), System.Drawing.Image)
+        Me.Deletar.Name = "Deletar"
+        Me.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
         'Frm_editar_preco
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
+        Me.Controls.Add(Me.btn_sair_edicao)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label23)
@@ -543,6 +581,7 @@ Partial Class Frm_editar_preco
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_editar_preco"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar tabela de preços"
@@ -589,6 +628,7 @@ Partial Class Frm_editar_preco
     Friend WithEvents Label24 As Label
     Friend WithEvents txt_precolegenda As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btn_sair_edicao As ns1.BunifuFlatButton
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nome As DataGridViewTextBoxColumn
     Friend WithEvents Editar As DataGridViewImageColumn

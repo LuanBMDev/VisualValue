@@ -22,6 +22,7 @@ Partial Class Frm_editar_custos
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_editar_custos))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_perfilcustos = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,6 +36,10 @@ Partial Class Frm_editar_custos
         Me.BunifuSeparator2 = New ns1.BunifuSeparator()
         Me.btn_adicionar = New ns1.BunifuFlatButton()
         Me.dgv_listacusto = New System.Windows.Forms.DataGridView()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BunifuSeparator3 = New ns1.BunifuSeparator()
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator4 = New ns1.BunifuSeparator()
@@ -45,10 +50,6 @@ Partial Class Frm_editar_custos
         Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
         Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nome_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.preco_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remover = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -215,6 +216,31 @@ Partial Class Frm_editar_custos
         Me.dgv_listacusto.Size = New System.Drawing.Size(918, 102)
         Me.dgv_listacusto.TabIndex = 21
         '
+        'numero
+        '
+        Me.numero.HeaderText = "NUMERO"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        '
+        'nome_custo
+        '
+        Me.nome_custo.HeaderText = "NOME DO CUSTO"
+        Me.nome_custo.Name = "nome_custo"
+        '
+        'preco_custo
+        '
+        Me.preco_custo.HeaderText = "PRECO DO CUSTO"
+        Me.preco_custo.Name = "preco_custo"
+        Me.preco_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.preco_custo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'remover
+        '
+        Me.remover.HeaderText = "REMOVER"
+        Me.remover.Name = "remover"
+        Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
         'BunifuSeparator3
         '
         Me.BunifuSeparator3.BackColor = System.Drawing.Color.Transparent
@@ -350,31 +376,6 @@ Partial Class Frm_editar_custos
         Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_sair_modo_edicao.Visible = False
         '
-        'numero
-        '
-        Me.numero.HeaderText = "NUMERO"
-        Me.numero.Name = "numero"
-        Me.numero.ReadOnly = True
-        '
-        'nome_custo
-        '
-        Me.nome_custo.HeaderText = "NOME DO CUSTO"
-        Me.nome_custo.Name = "nome_custo"
-        '
-        'preco_custo
-        '
-        Me.preco_custo.HeaderText = "PRECO DO CUSTO"
-        Me.preco_custo.Name = "preco_custo"
-        Me.preco_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.preco_custo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'remover
-        '
-        Me.remover.HeaderText = "REMOVER"
-        Me.remover.Name = "remover"
-        Me.remover.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -401,6 +402,7 @@ Partial Class Frm_editar_custos
         Me.Controls.Add(Me.txt_perfilcustos)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_editar_custos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar custos mensais"

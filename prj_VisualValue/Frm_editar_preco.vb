@@ -79,6 +79,7 @@
     Private Sub Frm_editar_preco_Load(sender As Object, e As EventArgs) Handles Me.Load
         carrgar_dados()
         Frm_Menu.Hide()
+        btn_sair_edicao.Hide()
     End Sub
 
     Private Sub dgv_precos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_precos.CellContentClick
@@ -102,19 +103,21 @@
             Try
                 If .CurrentRow.Cells(2).Selected = True Then
                     idperfil = CInt(.CurrentRow.Cells(0).Value)
+                    Limpar_dados()
 
                     sql = "select * from tb_perfil_precos where id_perfil_precos =" & idperfil
                     tabela = banco.Execute(sql)
                     If idperfil = tabela.Fields(0).Value Then
                         txt_perfilpreco.Text = tabela.Fields(1).Value
-                        txt_precolegenda.Text = tabela.Fields(2).Value
-                        txt_precodiferenca.Text = tabela.Fields(3).Value
-                        txt_precosimples.Text = tabela.Fields(4).Value
-                        txt_precomedia.Text = tabela.Fields(5).Value
-                        txt_precocomplexa.Text = tabela.Fields(6).Value
+                        txt_precolegenda.Text = FormatNumber(tabela.Fields(2).Value, 2)
+                        txt_precodiferenca.Text = FormatNumber(tabela.Fields(3).Value, 2)
+                        txt_precosimples.Text = FormatNumber(tabela.Fields(4).Value, 2)
+                        txt_precomedia.Text = FormatNumber(tabela.Fields(5).Value, 2)
+                        txt_precocomplexa.Text = FormatNumber(tabela.Fields(6).Value, 2)
                     End If
                 End If
                 btn_cadastar.Text = "EDITAR"
+                btn_sair_edicao.Show()
             Catch ex As Exception
                 MsgBox("Não foi possível entrar no modo edição!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
             End Try
@@ -242,5 +245,18 @@
                 .Clear()
             End If
         End With
+    End Sub
+
+    Private Sub btn_sair_edicao_Click(sender As Object, e As EventArgs) Handles btn_sair_edicao.Click
+
+        Dim resp As String
+
+        resp = MsgBox("deseja sair do modo edição?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Aviso")
+        If resp = vbYes Then
+            btn_sair_edicao.Hide()
+            idperfil = 0
+            Limpar_dados()
+            btn_cadastar.Text = "CADASTRAR"
+        End If
     End Sub
 End Class
