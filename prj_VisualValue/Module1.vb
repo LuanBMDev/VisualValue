@@ -78,7 +78,7 @@
                 Do While tabela.EOF = False
                     .dgv_listacusto.Rows.Add(tabela.Fields(0).Value,
                                              tabela.Fields(1).Value,
-                                             tabela.Fields(2).Value)
+                                             FormatNumber(tabela.Fields(2).Value, 2))
                     tabela.MoveNext()
                 Loop
             End If

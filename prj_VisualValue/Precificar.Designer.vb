@@ -812,6 +812,7 @@ Partial Class Frm_Precificar
         Me.Controls.Add(Me.cmb_perfilpreco)
         Me.Controls.Add(Me.cmb_perfilcusto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Frm_Precificar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

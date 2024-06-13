@@ -44,12 +44,12 @@ Partial Class Frm_editar_custos
         Me.btn_cadastar = New ns1.BunifuFlatButton()
         Me.BunifuSeparator4 = New ns1.BunifuSeparator()
         Me.dgv_listaperfil = New System.Windows.Forms.DataGridView()
-        Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
-        Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
         Me.id_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nome_perfil_custo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.editar_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
+        Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -312,6 +312,34 @@ Partial Class Frm_editar_custos
         Me.dgv_listaperfil.Size = New System.Drawing.Size(918, 128)
         Me.dgv_listaperfil.TabIndex = 25
         '
+        'id_perfil_custo
+        '
+        Me.id_perfil_custo.HeaderText = "ID DO PERFIL"
+        Me.id_perfil_custo.Name = "id_perfil_custo"
+        Me.id_perfil_custo.ReadOnly = True
+        '
+        'nome_perfil_custo
+        '
+        Me.nome_perfil_custo.HeaderText = "NOME DO PERFIL"
+        Me.nome_perfil_custo.Name = "nome_perfil_custo"
+        Me.nome_perfil_custo.ReadOnly = True
+        '
+        'editar_perfil_custo
+        '
+        Me.editar_perfil_custo.HeaderText = "EDITAR"
+        Me.editar_perfil_custo.Image = CType(resources.GetObject("editar_perfil_custo.Image"), System.Drawing.Image)
+        Me.editar_perfil_custo.Name = "editar_perfil_custo"
+        Me.editar_perfil_custo.ReadOnly = True
+        Me.editar_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'excluir_perfil_custo
+        '
+        Me.excluir_perfil_custo.HeaderText = "EXCLUIR"
+        Me.excluir_perfil_custo.Image = CType(resources.GetObject("excluir_perfil_custo.Image"), System.Drawing.Image)
+        Me.excluir_perfil_custo.Name = "excluir_perfil_custo"
+        Me.excluir_perfil_custo.ReadOnly = True
+        Me.excluir_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
         'txt_precocusto
         '
         Me.txt_precocusto.Location = New System.Drawing.Point(754, 156)
@@ -355,34 +383,6 @@ Partial Class Frm_editar_custos
         Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_sair_modo_edicao.Visible = False
         '
-        'id_perfil_custo
-        '
-        Me.id_perfil_custo.HeaderText = "ID DO PERFIL"
-        Me.id_perfil_custo.Name = "id_perfil_custo"
-        Me.id_perfil_custo.ReadOnly = True
-        '
-        'nome_perfil_custo
-        '
-        Me.nome_perfil_custo.HeaderText = "NOME DO PERFIL"
-        Me.nome_perfil_custo.Name = "nome_perfil_custo"
-        Me.nome_perfil_custo.ReadOnly = True
-        '
-        'editar_perfil_custo
-        '
-        Me.editar_perfil_custo.HeaderText = "EDITAR"
-        Me.editar_perfil_custo.Image = CType(resources.GetObject("editar_perfil_custo.Image"), System.Drawing.Image)
-        Me.editar_perfil_custo.Name = "editar_perfil_custo"
-        Me.editar_perfil_custo.ReadOnly = True
-        Me.editar_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'excluir_perfil_custo
-        '
-        Me.excluir_perfil_custo.HeaderText = "EXCLUIR"
-        Me.excluir_perfil_custo.Image = CType(resources.GetObject("excluir_perfil_custo.Image"), System.Drawing.Image)
-        Me.excluir_perfil_custo.Name = "excluir_perfil_custo"
-        Me.excluir_perfil_custo.ReadOnly = True
-        Me.excluir_perfil_custo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,8 +409,8 @@ Partial Class Frm_editar_custos
         Me.Controls.Add(Me.txt_perfilcustos)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Frm_editar_custos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar custos mensais"

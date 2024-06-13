@@ -17,7 +17,7 @@
                         prox_indice = (.Rows(.Rows.Count - 1).Cells(0).Value) + 1
                     End If
 
-                    .Rows.Add(prox_indice, txt_nomecusto.Text, txt_precocusto.Text, Nothing)
+                    .Rows.Add(prox_indice, UCase(txt_nomecusto.Text), FormatNumber(txt_precocusto.Text, 2), Nothing)
                 End With
 
                 txt_nomecusto.Clear()

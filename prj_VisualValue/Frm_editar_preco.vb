@@ -8,7 +8,7 @@
             MsgBox("Preencha todos os campos!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
         ElseIf idperfil <> 0 Then
             Try
-                sql = "update tb_perfil_precos set nome_perfil_precos = '" & txt_perfilpreco.Text &
+                sql = "update tb_perfil_precos set nome_perfil_precos = '" & UCase(txt_perfilpreco.Text) &
                                             "',legenda_por_minuto = '" & txt_precolegenda.Text &
                                             "', diff_bruto_e_final =  '" & txt_precodiferenca.Text &
                                             "', edicao_simples = '" & txt_precosimples.Text &
@@ -31,7 +31,7 @@
                 tabela = banco.Execute(sql)
                 If tabela.EOF = True Then
                     sql = "insert into tb_perfil_precos (nome_perfil_precos,legenda_por_minuto, diff_bruto_e_final, edicao_simples, edicao_mediana, edicao_complexa)" &
-                                                "values ('" & txt_perfilpreco.Text & "', '" &
+                                                "values ('" & UCase(txt_perfilpreco.Text) & "', '" &
                                                             txt_precolegenda.Text & "', '" &
                                                             txt_precodiferenca.Text & "', '" &
                                                             txt_precosimples.Text & "', '" &
