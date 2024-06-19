@@ -164,6 +164,11 @@
                         resp = MsgBox("Deseja apagar o perfil '" & .CurrentRow.Cells(1).Value & "'?",
                             MsgBoxStyle.Question + MsgBoxStyle.YesNo, "AVISO")
                         If resp = MsgBoxResult.Yes Then
+                            If modo_edicao = True Then
+                                limpar_custos_mensais()
+                                alt_modo_edicao_custos_mensais(aux_id_perfil, False)
+                            End If
+
                             aux_id_perfil = .CurrentRow.Cells(0).Value
 
                             sql = "DELETE FROM tb_perfil_custos WHERE id_perfil_custos = " & aux_id_perfil

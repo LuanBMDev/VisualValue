@@ -90,6 +90,12 @@
                     aux_perfil = .CurrentRow.Cells(1).Value
                     resp = MsgBox("Deseja apagar o perfil: '" & aux_perfil & "'?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Atenção")
                     If resp = MsgBoxResult.Yes Then
+                        If idperfil <> 0 Then
+                            Limpar_dados()
+                            idperfil = 0
+                            btn_cadastar.Text = "CADASTRO"
+                            btn_sair_edicao.Hide()
+                        End If
                         sql = "delete from tb_perfil_precos where id_perfil_precos = " & .CurrentRow.Cells(0).Value & ""
                         tabela = banco.Execute(sql)
                         MsgBox("Perfil excluido com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
