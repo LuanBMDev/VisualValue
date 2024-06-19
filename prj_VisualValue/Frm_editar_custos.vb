@@ -229,4 +229,28 @@
     Private Sub Frm_editar_custos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_Menu.Show()
     End Sub
+
+    Private Sub txt_perfilcustos_TextChanged(sender As Object, e As EventArgs) Handles txt_perfilcustos.TextChanged
+        If txt_perfilcustos.Text = "" Then
+            Label19.Show()
+        Else
+            Label19.Hide()
+        End If
+    End Sub
+
+    Private Sub cmb_diatrabalhado_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_diatrabalhado.SelectedValueChanged
+        If cmb_diatrabalhado.SelectedIndex = 0 Then
+            Label6.Show()
+        Else
+            Label6.Hide()
+        End If
+    End Sub
+
+    Private Sub cmb_horatrabalhada_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_horatrabalhada.SelectedIndexChanged
+        If cmb_diatrabalhado.SelectedIndex = 0 Then
+            Label7.Show()
+        Else
+            Label7.Hide()
+        End If
+    End Sub
 End Class

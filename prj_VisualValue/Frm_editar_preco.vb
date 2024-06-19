@@ -123,7 +123,7 @@
                         txt_precocomplexa.Text = FormatNumber(tabela.Fields(6).Value, 2)
                     End If
                 End If
-                btn_cadastar.Text = "EDITAR"
+                btn_cadastar.Text = "SALVAR ALTERAÇÕES"
                 btn_sair_edicao.Show()
             Catch ex As Exception
                 MsgBox("Não foi possível entrar no modo edição!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")

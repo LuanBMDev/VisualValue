@@ -50,6 +50,9 @@ Partial Class Frm_editar_custos
         Me.excluir_perfil_custo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_precocusto = New System.Windows.Forms.MaskedTextBox()
         Me.btn_sair_modo_edicao = New ns1.BunifuFlatButton()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.dgv_listacusto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_listaperfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -383,12 +386,51 @@ Partial Class Frm_editar_custos
         Me.btn_sair_modo_edicao.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_sair_modo_edicao.Visible = False
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.White
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Location = New System.Drawing.Point(385, 64)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(12, 16)
+        Me.Label19.TabIndex = 43
+        Me.Label19.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(677, 64)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(14, 18)
+        Me.Label6.TabIndex = 44
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(920, 64)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 18)
+        Me.Label7.TabIndex = 45
+        Me.Label7.Text = "*"
+        '
         'Frm_editar_custos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(999, 677)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.btn_sair_modo_edicao)
         Me.Controls.Add(Me.txt_precocusto)
         Me.Controls.Add(Me.dgv_listaperfil)
@@ -448,4 +490,7 @@ Partial Class Frm_editar_custos
     Friend WithEvents nome_perfil_custo As DataGridViewTextBoxColumn
     Friend WithEvents editar_perfil_custo As DataGridViewImageColumn
     Friend WithEvents excluir_perfil_custo As DataGridViewImageColumn
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class
